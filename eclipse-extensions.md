@@ -1,0 +1,10 @@
+# Eclipse Extensions
+- [ ] [Darkest Dark Theme with DevStyle](https://marketplace.eclipse.org/content/darkest-dark-theme-devstyle)
+- [ ] [Infinitest](https://marketplace.eclipse.org/content/infinitest)
+- [ ] [EasyShell](https://marketplace.eclipse.org/content/easyshell)
+- [ ] [EclEmma Java Code Coverage](https://marketplace.eclipse.org/content/eclemma-java-code-coverage)
+- [ ] [Eclipse m2e - Maven support in Eclipse IDE latest](https://marketplace.eclipse.org/content/eclipse-m2e-maven-support-eclipse-ide)
+- [ ] [Eclipse Marketplace Client](https://marketplace.eclipse.org/content/eclipse-marketplace-client)
+- [ ] [Mylyn WikiText](https://marketplace.eclipse.org/content/mylyn-wikitext)
+- [ ] [Spring Tools 4 (aka Spring Tool Suite 4)](https://marketplace.eclipse.org/content/spring-tools-4-aka-spring-tool-suite-4)
+- [ ] [TM Terminal](https://marketplace.eclipse.org/content/tm-terminal)

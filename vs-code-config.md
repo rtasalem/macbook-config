@@ -37,7 +37,7 @@
 - [ ] [Dev Containers (Microsoft)](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 #### Kubernetes
 - [ ] [Kubernetes](https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools)
-#### .NET & C`#`
+#### .NET & C#
 - [ ] [.NET Install Tool (Microsoft)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime) 
 - [ ] [C# (Microsoft)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 - [ ] [IntelliCode for C# Dev Kit (Microsoft)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscodeintellicode-csharp)

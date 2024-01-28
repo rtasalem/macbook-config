@@ -4,7 +4,7 @@ This document details the set-up of a MacBook to use for software development wi
 ### Developer Tools
 -> [Reference in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/setup-macbook.md#install-developer-tools).
 ##### Instructions
-- Open Terminal and run the following command: `xcode-select --install`.
+- Open `terminal` and run the following command: `xcode-select --install`.
 - A pop-up window will appear stating that the `xcode-select` command requires the command line developer tools, click install and wait for the process to finish.
 - Run the command again to verify installation. The output should say something along the lines of `Command line tools are already installed...`.
 ##### Comments
@@ -14,16 +14,16 @@ This document details the set-up of a MacBook to use for software development wi
 ##### Instructions
 - [Download Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/).
 ##### Comments
-- If Mac OS is not fully updated to the latest update, then Docker Desktop may not open. Open System Settings and begin the OS update (this step also takes a while, but Docker Desktop should be able to open just fine afterwards).
+- If your Mac is not fully updated to the latest OS, then Docker Desktop may not open. Open `System Settings` and begin the OS update (this step also takes a while, but Docker Desktop should be able to open just fine afterwards).
 ### Signing Commits (a.k.a ensuring your commits on GitHub have that cool Verified tag next to your username)
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/sign-commits.md).
 ##### Instructions
 - Follow the instructions in the reference point (see above).
 ##### Comments
 - Test that your commits are being signed by creating a dummy repo and pushing to that repo.
-- If for whatever reason commits are not shown as *Verified* on GitHub, don't fret, the same happened to me. Here's what I did:
+- If for whatever reason commits are not shown as `Verified` on GitHub, don't fret, the same happened to me. Here's what I did:
 	- Some frantic Googling, which led me to [the answer](https://dev.to/devmount/signed-git-commits-in-vs-code-36do).
-	- In the above link, skip to the section titled *Set up Github*. It explains that you can tell Git your GPG key ID. First, get the ID of the GPG key you just created using this command:
+	- In the above link, skip to the section titled *Set up GitHub*. It explains that you can tell Git your GPG key ID. First, get the ID of the GPG key you just created using this command:
 		  `gpg --list-secret-keys --keyid-format=long`
 	  - In the following example the GPG key ID is `3AA5C34371567BD2`:
 		  ![gpg-key-id-example.png](https://github.com/rtasalem/macbook-config/blob/main/gpg-key-id-example.png)
@@ -32,14 +32,15 @@ This document details the set-up of a MacBook to use for software development wi
 		  `git config --global commit.gpgsign true`
 	- In VS Code, navigate to your `settings.json` and copy and past the following:
 		`"git.enableCommitSigning" : true`
-- Test your commits again, using a dummy repo and with all fingers crossed, your commits should now appear as *Verified*.
+- Test your commits again, using a dummy repo and with all fingers crossed, your commits should now appear as `Verified`.
 ### Visual Studio Code
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-vs-code.md).
 ##### Instructions
-- Follow the guide, ignore the section titled *WSL Configuration* this applies to Windows Devices only.
+- Follow the guide, ignore the section titled *WSL Configuration* (this applies to Windows Devices only).
 ##### Comments
-- This section has a lot of bits that need to be added to your `settings.json` file in VS Code. To find this, open VS Code and in the search bar, type `settings.json`, there should only be one result matching this search and that's the one you need.
-- After following the guide, your `settings.json` should look something similar to this (your `settings.json` *needs* to include lines 11-17 by the end of this step):
+- This section has a lot of bits that need to be added to your `settings.json` file in VS Code. To find your `settings.json`, open VS Code and hit `cmd` + `,` this will open the User Settings screen. From here, click the `Open Settings (JSON)` button in the top right corner (see below).
+![locating-settings-json.png](https://github.com/rtasalem/macbook-config/blob/main/locating-settings-json.png)
+- After following the guide, your `settings.json` should look something similar to the below image (your `settings.json` *needs* to include lines 11-17 by the end of this step):
 ![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/settings-json-post-vs-code-installation.png)
 ### SonarLint
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md).
@@ -48,8 +49,7 @@ This document details the set-up of a MacBook to use for software development wi
 - After installing the [SonarLint extension](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) in VS Code, the guide mentions setting the location of the JRE (Java Runtime Environment) in your VS Code settings (i.e. the `settings.json`), put the path used is incorrect.
 - For me, the correct path, which I have in my settings.json to use was: `"sonarlint.ls.javaHome": "/usr/local/opt/openjdk/libexec/openjdk.jdk"`.
 - A useful way of finding the correct path to the JRE is to use open *Go* in the Mac toolbar and select *Go to Folder*. This way you can find the JRE location you want to set in the `settings.json`.
-- Continue to follow the instructions, [ignoring step 4 under the section titled *SonarLint Installation (VS Code)*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#sonarlint-installation-vs-code) (the only reason being I wasn't sure whether or not this step was just providing an example for future reference).
-- Once you've completed step 5, theoretically this step is now completely (if there are any updates on this section, they will be included here).
+- Continue to follow the instructions, [ignoring step 4 under the section titled *SonarLint Installation (VS Code)*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#sonarlint-installation-vs-code) as this applies to individual projects rather than your VS Code environment.
 ##### Comments
 - Ignore the section titled [*Configure Sonar for C#*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#configure-sonar-for-c) (unless you'll be writing C#).
 - Also note that step 5 will not work if the correct location for the JRE isn't set.
@@ -132,8 +132,8 @@ This document details the set-up of a MacBook to use for software development wi
 - [Download from Microsoft](https://azure.microsoft.com/en-gb/products/storage/storage-explorer)
 - Can also be installed by Homebrew: `brew install --cask microsoft-azure-storage-explorer`.
 ### GraphQL Syntax Highlighting
--> Not referenced in DEFRA's original dev set-up guide, but was used when implementing GraphQL for a couple of POCs (proof of concepts).
+-> Not referenced in DEFRA's original dev set-up guide, but was used when implementing GraphQL for a couple of POCs for FFD.
 ##### Instructions
 - Install the [GraphQL: Syntax Highlighting Extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql-syntax) via VS Code
-- To implement the extension when writing out typeDefs (type definitions), add `#graphql` at the top of the typeDefs (see example below):
+- To implement the extension when writing out `typeDefs` (type definitions), add `#graphql` at the top of the `typeDefs` (see example below):
 ![graphql-syntax-highlighting.png](https://github.com/rtasalem/macbook-config/blob/main/graphql-syntax-highlighting.png)

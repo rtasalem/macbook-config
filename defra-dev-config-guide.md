@@ -1,5 +1,5 @@
 # DEFRA Developer Config Guide
-### Heads-Up
+## Summary
 This document details the set-up of a MacBook to use for software development within the FCP under DEFRA. The original repo detailing the set-up can be found on [DEFRA's official GitHub](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/README.md). Please use the original guide as the main set of instructions and only refer to this guide when there's any problems. The following information is simply the documentation of my own set-up and any additional steps which helped my Mac set-up whenever I was having issues. Spoiler alert, Homebrew solved a lot of these problems ([installing Homebrew](https://brew.sh/) should probably be the first thing you do).
 ### Developer Tools
 -> [Reference in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/setup-macbook.md#install-developer-tools).
@@ -122,17 +122,19 @@ This document details the set-up of a MacBook to use for software development wi
 	`brew install --cask openvpn-connect`
 ##### Comments
 - Verify installation of OpenVPN using `openvpn --version`.
+## Other
+Below this point is other additional config that I've done for my Mac that is not in the original guide.
 ### Another Redis Desktop Manager
--> Not referenced in DEFRA's original dev set-up guide, but was installed when building the POC (proof of concept) for FFD.
+-> Installed when building the POC (proof of concept) for FFD.
 ##### Instructions
 - [Download from GitHub](https://github.com/qishibo/AnotherRedisDesktopManager) (includes the Homebrew command to install).
 ### Microsoft Azure Storage Explorer
--> Not referenced in DEFRA's original dev set-up guide, but was recommended by the lead developer while going through different FFD repositories.
+-> Recommended by the lead developer while going through different FFD repositories.
 ##### Instructions
 - [Download from Microsoft](https://azure.microsoft.com/en-gb/products/storage/storage-explorer)
 - Can also be installed by Homebrew: `brew install --cask microsoft-azure-storage-explorer`.
 ### GraphQL Syntax Highlighting
--> Not referenced in DEFRA's original dev set-up guide, but was used when implementing GraphQL for a couple of POCs for FFD.
+-> Used when implementing GraphQL for a couple of POCs for FFD.
 ##### Instructions
 - Install the [GraphQL: Syntax Highlighting Extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql-syntax) via VS Code
 - To implement the extension when writing out `typeDefs` (type definitions), add `#graphql` at the top of the `typeDefs` (see example below):

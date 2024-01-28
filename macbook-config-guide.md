@@ -15,7 +15,7 @@ This document serves as a complete guide to setting up a personal MacBook device
 8. Arrange which icons to hide/show in the toolbar exactly how it was done in step 2 i.e. holding `cmd` and dragging to re-arrange.
 9. Open `System Settings` > `Trackpad` and ensure `Tap to click` is turned on. Set `Press fn key` to `Show Emoji & Symbols`. Under `Touch Bar Settings` turn off `Show typing suggestions`. Set `Keyboard navigation` to on.
 10. Open `System Settings` > `General` > `AirDrop & Handoff` and turn off `Allow Handoff between this Mac and your iCloud devices`.
-11. Open `System Settings` > `Focus` and delete all Focus profiles except `Do Not Disturb` and set `Share across devices*` to off.
+11. Open `System Settings` > `Focus` and delete all Focus profiles except `Do Not Disturb` and set `Share across devices` to off.
 12. Open `System Settings` > `Notifications` and configure notifications for all applications listed to however preferred (this varies on what the machine is used for e.g. as a personal or work device).
 13. Install [Oh-My-Zsh](https://ohmyz.sh/). This is a framework for customising the Zsh (terminal) configuration. It comes with a bunch of useful plugins and themes. Go into your home directory on your machine and press `cmd` + `Shift` + `.` to view all hidden files. Open the `.zshrc` file and be sure to set your theme after installing Oh-My-Zsh to `eastwood`:
 ![terminal-theme.png](https://github.com/rtasalem/macbook-config/blob/main/terminal-theme.png)
@@ -48,8 +48,8 @@ This document serves as a complete guide to setting up a personal MacBook device
 	- To install Bootstrap, complete the following within the project/app:
 		- Run `npm install bootstrap popper.js` (`Bootstrap` depends on `popper.js` for JS functionality)
 		- In the `App.js` import Bootstrap:
-			- `import "bootstrap/dist/css/bootstrap.min.css`
-			- `import "bootstrap/dist/js/bootstrap.bundle`
+			- `import "bootstrap/dist/css/bootstrap.min.css"`
+			- `import "bootstrap/dist/js/bootstrap.bundle"`
 - [ ] [Maven](https://www.youtube.com/watch?v=REPevl2IrQc)
 - [ ] [Python](https://www.python.org/downloads/)
 	- Instructions for installing `Python3` & `PyCharm` are in freeCodeCamp's Python tutorial on YouTube. [Skip to 1:45 for instructions](https://www.youtube.com/watch?v=rfscVS0vtbw&t=105s).

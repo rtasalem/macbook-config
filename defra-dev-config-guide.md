@@ -80,36 +80,54 @@ xcode-select --install
 ##### Comments
 - At first thought I did not properly install Python as the `python --version` command was not showing the version post-installation, but actually the correct command to run was `python3 --version` (i.e. version 3). Same issue occurred with Pip, but again just had to run the version command as `pip3 --version`.
 - Generally if there are any installation issues during this step, just use Homebrew.
-- Open terminal, run `detect-secrets --version` to verify installation.
+- Open terminal, run the following command to verify installation:
+```
+detect-secrets --version
+```
 ***
 ### Node Version Manager (NVM)
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-node-version-manager.md).
 ##### Instructions
 - Personally, I just used [Homebrew to install NVM](https://formulae.brew.sh/formula/nvm).
 ##### Comments
-- Open terminal, run `nvm --version` to verify installation.
+- Open terminal, run the following command to verify installation:
+```
+nvm --version
+```
 ***
 ### .NET SDK
 -> [Reference point in DEFRA's original guide]().
 ##### Instructions
 - Follow the guide as is.
 ##### Comments
-- Just like in the guide, verify the installation by opening terminal and running `dotnet --version`
-- Run the final command, `dotnet tool install --global dotnet-ef` in the guide as a finishing step to installing .NET SDK.
+- Just like in the guide, verify the installation by opening terminal and running
+```
+dotnet --version
+```
+- Run the final command in the guide as a finishing step to installing .NET SDK:
+```
+dotnet tool install --global dotnet-ef
+```
 ***
 ### kubectl
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-kubectl.md).
 ##### Instructions
 - In the instructions, Homebrew was one of the recommendations for [installing kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos), this is what I used. 
 ##### Comments
-- Verify installation by running the `kubectl version` command.
+- Verify installation by running the following command:
+```
+kubectl version
+```
 ***
 ### Helm
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/installing-helm.md).
 ##### Instructions
 - Again, Homebrew was one of the recommendations for [installing Helm](https://helm.sh/docs/intro/install/#through-package-managers).
 ##### Comments
-- Verify the installation by running the `helm version` command.
+- Verify the installation by running the following command:
+```
+helm version
+```
 ***
 ### Azure CLI
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-azure-cli.md).
@@ -118,27 +136,38 @@ xcode-select --install
 - Log in to Azure Tenant using the command provided in the guide (see the reference point provided above) via your terminal. 
 - You'll need to get your credentials from CCoE (Cloud Centre of Excellence).
 ##### Comments
-- Verify installation using the `az version` command.
+- Verify installation using the following command:
+```
+az version
+```
 ***
 ### Snyk CLI
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-snyk.md).
 ##### Instructions
 - No surprise, you can install [Snyk CLI using Homebrew](https://docs.snyk.io/snyk-cli/install-or-update-the-snyk-cli#install-with-homebrew-macos-linux).
 ##### Comments
-- Run `snyk --version` to verify installation.
+- Run the following command to verify installation:
+```
+snyk --version
+```
 ***
 ### GitHub CLI
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-github.md).
 ##### Instructions
 - Yes, of course you can [install GitHub CLI using Homebrew](https://github.com/cli/cli).
 ##### Comments
-- Verify installation by running `gh --version`.
+- Verify installation by running the following command to check the version of GitHub CLI that was installed:
+```
+gh --version
+```
 ***
 ### OpenVPN
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-openvpn.md).
 ##### Instructions
 - Run the following commands:
-	`brew install openvpn`
+```
+brew install openvpn
+```
 - You will need to get your OpenVPN credentials from the CCoE:
 	- Navigate to the OpenVPN link provided in the email.
 	- You'll see a login page, select *Sign In via SAML*.
@@ -151,7 +180,10 @@ xcode-select --install
 	- Once the update is installed, try again to turn on the connection and this should get you connected a lot faster.
 	- Now you're all connected with OpenVPN and there's nothing left to do.
 ##### Comments
-- Verify installation of OpenVPN using `openvpn --version`.
+- Verify installation of OpenVPN using:
+```
+openvpn --version
+```
 ***
 ## Other
 Below this point is other additional config that I've done for my Mac that is not in the original guide.
@@ -165,7 +197,10 @@ Below this point is other additional config that I've done for my Mac that is no
 -> Recommended by the lead developer while going through different FFD repositories.
 ##### Instructions
 - [Download from Microsoft](https://azure.microsoft.com/en-gb/products/storage/storage-explorer)
-- Can also be installed by Homebrew: `brew install --cask microsoft-azure-storage-explorer`.
+- Can also be installed by Homebrew: 
+```
+brew install --cask microsoft-azure-storage-explorer
+```
 ***
 ### GraphQL Syntax Highlighting
 -> Used when implementing GraphQL for a couple of POCs for FFD.

@@ -1,6 +1,7 @@
 # DEFRA Developer Config Guide
 ## Summary
 This document details the set-up of a MacBook to use for software development within the FCP under DEFRA. The original repo detailing the set-up can be found on [DEFRA's official GitHub](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/README.md). Please use the original guide as the main set of instructions and only refer to this guide when there's any problems. The following information is simply the documentation of my own set-up and any additional steps which helped my Mac set-up whenever I was having issues. Spoiler alert, Homebrew solved a lot of these problems ([installing Homebrew](https://brew.sh/) should probably be the first thing you do).
+***
 ### Developer Tools
 -> [Reference in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/setup-macbook.md#install-developer-tools).
 ##### Instructions
@@ -9,12 +10,15 @@ This document details the set-up of a MacBook to use for software development wi
 - Run the command again to verify installation. The output should say something along the lines of `Command line tools are already installed...`.
 ##### Comments
 - This one takes a wee while.
+***
 ### Docker Desktop
+
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/setup-macbook.md#install-docker-desktop-for-mac).
 ##### Instructions
 - [Download Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/).
 ##### Comments
 - If your Mac is not fully updated to the latest OS, then Docker Desktop may not open. Open `System Settings` and begin the OS update (this step also takes a while, but Docker Desktop should be able to open just fine afterwards).
+***
 ### Signing Commits (a.k.a ensuring your commits on GitHub have that cool Verified tag next to your username)
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/sign-commits.md).
 ##### Instructions
@@ -33,6 +37,7 @@ This document details the set-up of a MacBook to use for software development wi
 	- In VS Code, navigate to your `settings.json` and copy and past the following:
 		`"git.enableCommitSigning" : true`
 - Test your commits again, using a dummy repo and with all fingers crossed, your commits should now appear as `Verified`.
+***
 ### Visual Studio Code
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-vs-code.md).
 ##### Instructions
@@ -42,6 +47,7 @@ This document details the set-up of a MacBook to use for software development wi
 ![locating-settings-json.png](https://github.com/rtasalem/macbook-config/blob/main/locating-settings-json.png)
 - After following the guide, your `settings.json` should look something similar to the below image (your `settings.json` *needs* to include lines 11-17 by the end of this step):
 ![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/settings-json-post-vs-code-installation.png)
+***
 ### SonarLint
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md).
 ##### Instructions
@@ -56,12 +62,14 @@ This document details the set-up of a MacBook to use for software development wi
 - By the end of this sections, your `setting.json` should include lines 20-26 as shown below:
 ![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/settings-json-post-vs-code-installation.png)
 - The location of the JRE might not be the same for everyone. I.e. the one I ended up using may not be (but hopefully will be) the same as location on a different device.
+***
 ### Docker Compose
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-docker-compose.md#install-docker-compose).
 ##### Instructions
 - There aren't any instructions for this step. If you downloaded Docker Desktop, then you already have Docker Compose.
 ##### Comments
 - None.
+***
 ### detect-secrets
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-detect-secrets.md).
 ##### Instructions
@@ -70,12 +78,14 @@ This document details the set-up of a MacBook to use for software development wi
 - At first thought I did not properly install Python as the `python --version` command was not showing the version post-installation, but actually the correct command to run was `python3 --version` (i.e. version 3). Same issue occurred with Pip, but again just had to run the version command as `pip3 --version`.
 - Generally if there are any installation issues during this step, just use Homebrew.
 - Open terminal, run `detect-secrets --version` to verify installation.
+***
 ### Node Version Manager (NVM)
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-node-version-manager.md).
 ##### Instructions
 - Personally, I just used [Homebrew to install NVM](https://formulae.brew.sh/formula/nvm).
 ##### Comments
 - Open terminal, run `nvm --version` to verify installation.
+***
 ### .NET SDK
 -> [Reference point in DEFRA's original guide]().
 ##### Instructions
@@ -83,18 +93,21 @@ This document details the set-up of a MacBook to use for software development wi
 ##### Comments
 - Just like in the guide, verify the installation by opening terminal and running `dotnet --version`
 - Run the final command, `dotnet tool install --global dotnet-ef` in the guide as a finishing step to installing .NET SDK.
+***
 ### kubectl
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-kubectl.md).
 ##### Instructions
 - In the instructions, Homebrew was one of the recommendations for [installing kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos), this is what I used. 
 ##### Comments
 - Verify installation by running the `kubectl version` command.
+***
 ### Helm
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/installing-helm.md).
 ##### Instructions
 - Again, Homebrew was one of the recommendations for [installing Helm](https://helm.sh/docs/intro/install/#through-package-managers).
 ##### Comments
 - Verify the installation by running the `helm version` command.
+***
 ### Azure CLI
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-azure-cli.md).
 ##### Instructions
@@ -103,18 +116,21 @@ This document details the set-up of a MacBook to use for software development wi
 - You'll need to get your credentials from CCoE (Cloud Centre of Excellence).
 ##### Comments
 - Verify installation using the `az version` command.
+***
 ### Snyk CLI
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-snyk.md).
 ##### Instructions
 - No surprise, you can install [Snyk CLI using Homebrew](https://docs.snyk.io/snyk-cli/install-or-update-the-snyk-cli#install-with-homebrew-macos-linux).
 ##### Comments
 - Run `snyk --version` to verify installation.
+***
 ### GitHub CLI
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-github.md).
 ##### Instructions
 - Yes, of course you can [install GitHub CLI using Homebrew](https://github.com/cli/cli).
 ##### Comments
 - Verify installation by running `gh --version`.
+***
 ### OpenVPN
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-openvpn.md).
 ##### Instructions
@@ -133,23 +149,28 @@ This document details the set-up of a MacBook to use for software development wi
 	- Now you're all connected with OpenVPN and there's nothing left to do.
 ##### Comments
 - Verify installation of OpenVPN using `openvpn --version`.
+***
 ## Other
 Below this point is other additional config that I've done for my Mac that is not in the original guide.
+***
 ### Another Redis Desktop Manager
 -> Installed when building the POC (proof of concept) for FFD.
 ##### Instructions
 - [Download from GitHub](https://github.com/qishibo/AnotherRedisDesktopManager) (includes the Homebrew command to install).
+***
 ### Microsoft Azure Storage Explorer
 -> Recommended by the lead developer while going through different FFD repositories.
 ##### Instructions
 - [Download from Microsoft](https://azure.microsoft.com/en-gb/products/storage/storage-explorer)
 - Can also be installed by Homebrew: `brew install --cask microsoft-azure-storage-explorer`.
+***
 ### GraphQL Syntax Highlighting
 -> Used when implementing GraphQL for a couple of POCs for FFD.
 ##### Instructions
 - Install the [GraphQL: Syntax Highlighting Extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql-syntax) via VS Code
 - To implement the extension when writing out `typeDefs` (type definitions), add `#graphql` at the top of the `typeDefs` (see example below):
 ![graphql-syntax-highlighting.png](https://github.com/rtasalem/macbook-config/blob/main/graphql-syntax-highlighting.png)
+***
 ### Jenkins
 -> Is needed to access CI/CD pipelines.
 ##### Instructions

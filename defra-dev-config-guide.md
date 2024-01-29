@@ -99,7 +99,8 @@ This document details the set-up of a MacBook to use for software development wi
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-azure-cli.md).
 ##### Instructions
 - Once again, Homebrew can be used to install [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos).
-- Log in to Azure Tenant using the command provided in the guide (see the reference point provided above). You may need to get your credentials provided by the senior developers in your team.
+- Log in to Azure Tenant using the command provided in the guide (see the reference point provided above) via your terminal. 
+- You'll need to get your credentials from CCoE (Cloud Centre of Excellence).
 ##### Comments
 - Verify installation using the `az version` command.
 ### Snyk CLI
@@ -119,7 +120,17 @@ This document details the set-up of a MacBook to use for software development wi
 ##### Instructions
 - Run the following commands:
 	`brew install openvpn`
-	`brew install --cask openvpn-connect`
+- You will need to get your OpenVPN credentials from the CCoE:
+	- Navigate to the OpenVPN link provided in the email.
+	- You'll see a login page, select *Sign In via SAML*.
+	- Enter your DEFRA credentials.
+	- Most likely a MFA prompt will pop-up, complete this.
+	- Once authenticated, you will be able to download the latest VPN client software i.e. OpenVPN Connect, download the version under the heading *Recommended for your device*.
+	- Launch the installed OpenVPN Connent app, you'll see a pop-up showing your DEFRA VPN profile.
+	- Next to your name/credentials there will be a on/off toggle, toggle this to on.
+	- If it appears to be taking some time to connect to OpenVPN, click the menu icon in the top left (this will appear as 3 horizontal lines on top of each other) and if you see an option to install the latest OpenVPN update, do this.
+	- Once the update is installed, try again to turn on the connection and this should get you connected a lot faster.
+	- Now you're all connected with OpenVPN and there's nothing left to do.
 ##### Comments
 - Verify installation of OpenVPN using `openvpn --version`.
 ## Other
@@ -139,3 +150,11 @@ Below this point is other additional config that I've done for my Mac that is no
 - Install the [GraphQL: Syntax Highlighting Extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql-syntax) via VS Code
 - To implement the extension when writing out `typeDefs` (type definitions), add `#graphql` at the top of the `typeDefs` (see example below):
 ![graphql-syntax-highlighting.png](https://github.com/rtasalem/macbook-config/blob/main/graphql-syntax-highlighting.png)
+### Jenkins
+-> Is needed to access CI/CD pipelines.
+##### Instructions
+- You will need to get your Jenkins credentials from CCoE.
+- In the email invite, a link will be provided to access the Jenkins dashboard (for some reason I could only open the link on the potato, it doesn't load on the browser from my offnet device).
+- Enter the username and password provided in the email and you should now be able to log into the Jenkins dashboard.
+##### Comments
+- None.

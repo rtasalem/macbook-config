@@ -5,7 +5,10 @@ This document details the set-up of a MacBook to use for software development wi
 ### Developer Tools
 -> [Reference in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/setup-macbook.md#install-developer-tools).
 ##### Instructions
-- Open `terminal` and run the following command: `xcode-select --install`.
+- Open `terminal` and run the following command: 
+```
+xcode-select --install
+````
 - A pop-up window will appear stating that the `xcode-select` command requires the command line developer tools, click install and wait for the process to finish.
 - Run the command again to verify installation. The output should say something along the lines of `Command line tools are already installed...`.
 ##### Comments
@@ -28,7 +31,7 @@ This document details the set-up of a MacBook to use for software development wi
 - If for whatever reason commits are not shown as `Verified` on GitHub, don't fret, the same happened to me. Here's what I did:
 	- Some frantic Googling, which led me to [the answer](https://dev.to/devmount/signed-git-commits-in-vs-code-36do).
 	- In the above link, skip to the section titled *Set up GitHub*. It explains that you can tell Git your GPG key ID. First, get the ID of the GPG key you just created using this command:
-		  `gpg --list-secret-keys --keyid-format=long`
+		  ` gpg --list-secret-keys --keyid-format=long`
 	  - In the following example the GPG key ID is `3AA5C34371567BD2`:
 		  ![gpg-key-id-example.png](https://github.com/rtasalem/macbook-config/blob/main/gpg-key-id-example.png)
 	- Take this ID and run the following commands:

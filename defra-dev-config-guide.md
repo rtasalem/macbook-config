@@ -169,21 +169,22 @@ gh --version
 brew install openvpn
 ```
 - You will need to get your OpenVPN credentials from the CCoE:
-	- Navigate to the OpenVPN link provided in the email.
-	- You'll see a login page, select *Sign In via SAML*.
-	- Enter your DEFRA credentials.
-	- Most likely a MFA prompt will pop-up, complete this.
-	- Once authenticated, you will be able to download the latest VPN client software i.e. OpenVPN Connect, download the version under the heading *Recommended for your device*.
-	- Launch the installed OpenVPN Connent app, you'll see a pop-up showing your DEFRA VPN profile.
-	- Next to your name/credentials there will be a on/off toggle, toggle this to on.
-	- If it appears to be taking some time to connect to OpenVPN, click the menu icon in the top left (this will appear as 3 horizontal lines on top of each other) and if you see an option to install the latest OpenVPN update, do this.
-	- Once the update is installed, try again to turn on the connection and this should get you connected a lot faster.
-	- Now you're all connected with OpenVPN and there's nothing left to do.
+	1. Navigate to the OpenVPN link provided in the email.
+	2. You'll see a login page, select *Sign In via SAML*.
+	3. Enter your DEFRA credentials.
+	4. Most likely a MFA prompt will pop-up, complete this.
+	5. Once authenticated, you will be able to download the latest VPN client software i.e. OpenVPN Connect, download the version under the heading *Recommended for your device*.
+	6. Launch the installed OpenVPN Connent app, you'll see a pop-up showing your DEFRA VPN profile.
+	7. Next to your name/credentials there will be a on/off toggle, toggle this to on.
+	8. If it appears to be taking some time to connect to OpenVPN, click the menu icon in the top left (this will appear as 3 horizontal lines on top of each other) and if you see an option to install the latest OpenVPN update, do this.
+	9. Once the update is installed, try again to turn on the connection and this should get you connected a lot faster.
+	10. Now you're all connected with OpenVPN and there's nothing left to do.
 ##### Comments
 - Verify installation of OpenVPN using:
 ```
 openvpn --version
 ```
+- If OpenVPN isn't connecting, repeat steps 1-10 above (you may not need to update to the latest version) and the VPN should now connect.
 ***
 ## Other
 Below this point is other additional config that I've done for my Mac that is not in the original guide.
@@ -217,3 +218,9 @@ brew install --cask microsoft-azure-storage-explorer
 - Enter the username and password provided in the email and you should now be able to log into the Jenkins dashboard.
 ##### Comments
 - None.
+### Lens
+-> Kubernetes IDE used to access pods.
+##### Instructions
+- [Download and install Lens](https://formulae.brew.sh/cask/lens).
+- Ensure that kubectl and Azure CLI have been installed (these are prerequisites and should have already been installed when going through [DEFRA's original dev guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/README.md)).
+- Follow the steps in the documentation (on Confluence) for connecting Lens to Kubernetes Clusters.

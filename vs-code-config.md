@@ -44,3 +44,4 @@
 #### Other
 - [ ] [Live Server (Ritwick Dey)](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) 
 - [ ] [Red Hat Dependency Analytics (Red Hat)](https://marketplace.visualstudio.com/items?itemName=redhat.fabric8-analytics)
+- [ ] [Error Lens (Alexander)](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)

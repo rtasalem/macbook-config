@@ -50,6 +50,7 @@ This document serves as a complete guide to setting up a personal MacBook device
 		- In the `App.js` import Bootstrap:
 			- `import "bootstrap/dist/css/bootstrap.min.css"`
 			- `import "bootstrap/dist/js/bootstrap.bundle"`
+	- (Note that Bootstrap just needs to be installed per project/app)
 - [ ] [Maven](https://www.youtube.com/watch?v=REPevl2IrQc)
 - [ ] [Python](https://www.python.org/downloads/)
 	- Instructions for installing `Python3` & `PyCharm` are in freeCodeCamp's Python tutorial on YouTube. [Skip to 1:45 for instructions](https://www.youtube.com/watch?v=rfscVS0vtbw&t=105s).
@@ -63,3 +64,12 @@ This document serves as a complete guide to setting up a personal MacBook device
 - [ ] [Figma](https://www.figma.com/downloads/)
 - [ ] [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/)
 	- Open `Settings` > `Kubernetes` > check the box that says `Enable Kubernetes` > click `Apply`.
+- [ ] Gatsby CLI
+	 - Should be installed globally. Open terminal and run the following command (if installing via `npm` isn't successful, use Homebrew):
+```
+npm install -g gatsby-cli
+```
+*OR*
+```
+brew install gatsby-cli
+```

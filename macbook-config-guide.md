@@ -64,3 +64,12 @@ This document serves as a complete guide to setting up a personal MacBook device
 - [ ] [Figma](https://www.figma.com/downloads/)
 - [ ] [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/)
 	- Open `Settings` > `Kubernetes` > check the box that says `Enable Kubernetes` > click `Apply`.
+- [ ] Gatsby CLI
+	 - Should be installed globally. Open terminal and run the following command (if installing via `npm` isn't successful, use Homebrew):
+```
+npm install -g gatsby-cli
+```
+*OR*
+```
+brew install gatsby-cli
+```

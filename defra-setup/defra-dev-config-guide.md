@@ -33,7 +33,7 @@ xcode-select --install
 	- In the above link, skip to the section titled *Set up GitHub*. It explains that you can tell Git your GPG key ID. First, get the ID of the GPG key you just created using this command:
 		  ` gpg --list-secret-keys --keyid-format=long`
 	  - In the following example the GPG key ID is `3AA5C34371567BD2`:
-		  ![gpg-key-id-example.png](https://github.com/rtasalem/macbook-config/blob/main/gpg-key-id-example.png)
+		  ![gpg-key-id-example.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/gpg-key-id-example.png)
 	- Take this ID and run the following commands:
 		  `git config --global user.signingkey 3AA5C34371567BD2`
 		  `git config --global commit.gpgsign true`
@@ -47,9 +47,9 @@ xcode-select --install
 - Follow the guide, ignore the section titled *WSL Configuration* (this applies to Windows Devices only).
 ##### Comments
 - This section has a lot of bits that need to be added to your `settings.json` file in VS Code. To find your `settings.json`, open VS Code and hit `cmd` + `,` this will open the User Settings screen. From here, click the `Open Settings (JSON)` button in the top right corner (see below).
-![locating-settings-json.png](https://github.com/rtasalem/macbook-config/blob/main/locating-settings-json.png)
+![locating-settings-json.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/locating-settings-json.png)
 - After following the guide, your `settings.json` should look something similar to the below image (your `settings.json` *needs* to include lines 11-17 by the end of this step):
-![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/settings-json-post-vs-code-installation.png)
+![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/settings-json-post-vs-code-installation.png)
 ***
 ### SonarLint
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md).
@@ -63,7 +63,7 @@ xcode-select --install
 - Ignore the section titled [*Configure Sonar for C#*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#configure-sonar-for-c) (unless you'll be writing C#).
 - Also note that step 5 will not work if the correct location for the JRE isn't set.
 - By the end of this sections, your `setting.json` should include lines 20-26 as shown below:
-![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/settings-json-post-vs-code-installation.png)
+![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/settings-json-post-vs-code-installation.png)
 - The location of the JRE might not be the same for everyone. I.e. the one I ended up using may not be (but hopefully will be) the same as location on a different device.
 ***
 ### Docker Compose
@@ -208,7 +208,7 @@ brew install --cask microsoft-azure-storage-explorer
 ##### Instructions
 - Install the [GraphQL: Syntax Highlighting Extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql-syntax) via VS Code
 - To implement the extension when writing out `typeDefs` (type definitions), add `#graphql` at the top of the `typeDefs` (see example below):
-![graphql-syntax-highlighting.png](https://github.com/rtasalem/macbook-config/blob/main/graphql-syntax-highlighting.png)
+![graphql-syntax-highlighting.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/graphql-syntax-highlighting.png)
 ***
 ### Jenkins
 -> Is needed to access CI/CD pipelines.

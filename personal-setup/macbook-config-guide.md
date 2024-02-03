@@ -3,22 +3,22 @@ This document serves as a complete guide to setting up a personal MacBook device
 ## Housekeeping
 1. Sign into Apple/iCloud (typically prompted via System Settings)
 2. Arrange Control Centre (hold `cmd` and drag the symbols to order them as preferred):
-![mac-control-centre-setup.png](https://github.com/rtasalem/macbook-config/blob/main/mac-control-centre-setup.png)
+![mac-control-centre-setup.png](https://github.com/rtasalem/macbook-config/blob/main/mac-setup/mac-control-centre-setup.png)
 3. [Install Tiles](https://freemacsoft.net/tiles/) and add the following hot keys:
-![tiles-hot-keys.png](https://github.com/rtasalem/macbook-config/blob/main/tiles-hot-keys.png)
+![tiles-hot-keys.png](https://github.com/rtasalem/macbook-config/blob/main/mac-setup/tiles-hot-keys.png)
 4. Open `System Settings` > `Appearance` and choose `Dark Mode` and whichever accent colour.
 5. Open `System Settings` > `Desktop & Dock` and ensure the set-up matches the settings below:
-![desktop-and-dock-settings.png](https://github.com/rtasalem/macbook-config/blob/main/desktop-and-dock-settings.png)
+![desktop-and-dock-settings.png](https://github.com/rtasalem/macbook-config/blob/main/mac-setup/desktop-and-dock-settings.png)
 6. [Download Google Chrome](https://www.google.com/intl/en_uk/chrome/?_gl=1*1ec694r*_up*MQ..*_ga*MTU5MTkxNjYwMy4xNzA1MDk1MzAy*_ga_B7W0ZKZYDK*MTcwNTA5NTMwMS4xLjAuMTcwNTA5NTMwMS4wLjAuMA..) and set it as the default browser (see step 5). Once installed, sign into Chrome using Gmail account, but consider whether you should sync your Chrome set up from another device (e.g. bookmarks & [extensions](https://github.com/rtasalem/macbook-config/blob/main/google-chrome-extensions.md)) to a new device. On a work device you likely want different bookmarks saved and might need or not be allowed to install all the extensions you typically use.
 7. [Install Hidden Bar](https://apps.apple.com/gb/app/hidden-bar/id1452453066?mt=12). This is a toolbar extension which helps to declutter the Mac toolbar. Once installed, open the application and ensure the settings match those shown below:
-![hidden-bar-settings](https://github.com/rtasalem/macbook-config/blob/main/hidden-bar-settings.png)
+![hidden-bar-settings](https://github.com/rtasalem/macbook-config/blob/main/mac-setup/hidden-bar-settings.png)
 8. Arrange which icons to hide/show in the toolbar exactly how it was done in step 2 i.e. holding `cmd` and dragging to re-arrange.
 9. Open `System Settings` > `Trackpad` and ensure `Tap to click` is turned on. Set `Press fn key` to `Show Emoji & Symbols`. Under `Touch Bar Settings` turn off `Show typing suggestions`. Set `Keyboard navigation` to on.
 10. Open `System Settings` > `General` > `AirDrop & Handoff` and turn off `Allow Handoff between this Mac and your iCloud devices`.
 11. Open `System Settings` > `Focus` and delete all Focus profiles except `Do Not Disturb` and set `Share across devices` to off.
 12. Open `System Settings` > `Notifications` and configure notifications for all applications listed to however preferred (this varies on what the machine is used for e.g. as a personal or work device).
 13. Install [Oh-My-Zsh](https://ohmyz.sh/). This is a framework for customising the Zsh (terminal) configuration. It comes with a bunch of useful plugins and themes. Go into your home directory on your machine and press `cmd` + `Shift` + `.` to view all hidden files. Open the `.zshrc` file and be sure to set your theme after installing Oh-My-Zsh to `eastwood`:
-![terminal-theme.png](https://github.com/rtasalem/macbook-config/blob/main/terminal-theme.png)
+![terminal-theme.png](https://github.com/rtasalem/macbook-config/blob/main/mac-setup/terminal-theme.png)
 14. Copy and paste the config from the `.zshrc.pre-oh-my-zsh` (this is what the `.zshrc` file is renamed too after installing Oh-My-Zsh). To do this, open terminal and run the command: `cat .zshrc.pre-oh-my-zsh`, copy the entire output and paste this into the `.zshrc` file.
 ## Apps
 [(Homebrew can install a bunch of these apps, if not all of them).](https://github.com/rtasalem/macbook-config/blob/main/brew-install-commands.md)

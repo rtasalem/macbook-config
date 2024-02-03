@@ -75,3 +75,6 @@ npm install -g gatsby-cli
 ```
 brew install gatsby-cli
 ```
+- [ ] .env Setup
+	- Simon taught me about this one. It's a way to set up .env files on Mac so that if new/updated variables are needed for a specific repo's `.env` file, it only has to be changed once.
+	- The way to achieve this is by using [symbolic links (or symlinks)](https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/).

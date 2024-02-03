@@ -52,6 +52,8 @@ This document serves as a complete guide to setting up a personal MacBook device
 			- `import "bootstrap/dist/js/bootstrap.bundle"`
 	- (Note that Bootstrap just needs to be installed per project/app)
 - [ ] [Maven](https://www.youtube.com/watch?v=REPevl2IrQc)
+	- Note that when installing Maven, especially when configuring paths, *do not* just simply copy the paths/commands used in the YouTube video linked above. 
+	- Check your version of Maven that you are downloading and be sure to update the commands/paths as necessary.
 - [ ] [Python](https://www.python.org/downloads/)
 	- Instructions for installing `Python3` & `PyCharm` are in freeCodeCamp's Python tutorial on YouTube. [Skip to 1:45 for instructions](https://www.youtube.com/watch?v=rfscVS0vtbw&t=105s).
 - [ ] [PyCharm](https://www.jetbrains.com/pycharm/download/?section=mac) - Python IDE (if needed, but VS Code should be suitable)

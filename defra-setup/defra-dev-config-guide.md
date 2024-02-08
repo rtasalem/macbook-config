@@ -15,7 +15,6 @@ xcode-select --install
 - This one takes a wee while.
 ***
 ### Docker Desktop
-
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/setup-macbook.md#install-docker-desktop-for-mac).
 ##### Instructions
 - [Download Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/).

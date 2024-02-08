@@ -9,7 +9,7 @@
 - [ ] [indent-raindow (oderwat)](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) 
 - [ ] [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 
 - [ ]  Set the colour of comments so that they stand out, don't have a similar colour to the actual code, and aren't so faded that they are hard to read. The photo below shows what should be added into the `settings.json` to set the comments to a light pinkish colour which is mostly distinct from the colour applied to actual code:
-![comments-colour.png](https://github.com/rtasalem/macbook-config/blob/main/comments-colour.png)
+![comments-colour.png](https://github.com/rtasalem/macbook-config/blob/main/personal-setup/comments-colour.png)
 #### Java
 - [ ] [Java IDE Pack (Paul Verest)](https://marketplace.visualstudio.com/items?itemName=pverest.java-ide-pack) - includes the following extensions/extension packs:
 	- [ ] [Extension Pack for Java (Microsoft)](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) - includes the following extensions:

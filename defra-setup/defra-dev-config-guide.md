@@ -33,7 +33,7 @@ xcode-select --install
 	- In the above link, skip to the section titled *Set up GitHub*. It explains that you can tell Git your GPG key ID. First, get the ID of the GPG key you just created using this command:
 		  ` gpg --list-secret-keys --keyid-format=long`
 	  - In the following example the GPG key ID is `3AA5C34371567BD2`:
-		  ![gpg-key-id-example.png](https://github.com/rtasalem/macbook-config/blob/main/gpg-key-id-example.png)
+		  ![gpg-key-id-example.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/gpg-key-id-example.png)
 	- Take this ID and run the following commands:
 		  `git config --global user.signingkey 3AA5C34371567BD2`
 		  `git config --global commit.gpgsign true`
@@ -47,9 +47,9 @@ xcode-select --install
 - Follow the guide, ignore the section titled *WSL Configuration* (this applies to Windows Devices only).
 ##### Comments
 - This section has a lot of bits that need to be added to your `settings.json` file in VS Code. To find your `settings.json`, open VS Code and hit `cmd` + `,` this will open the User Settings screen. From here, click the `Open Settings (JSON)` button in the top right corner (see below).
-![locating-settings-json.png](https://github.com/rtasalem/macbook-config/blob/main/locating-settings-json.png)
+![locating-settings-json.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/locating-settings-json.png)
 - After following the guide, your `settings.json` should look something similar to the below image (your `settings.json` *needs* to include lines 11-17 by the end of this step):
-![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/settings-json-post-vs-code-installation.png)
+![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/settings-json-post-vs-code-installation.png)
 ***
 ### SonarLint
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md).
@@ -63,7 +63,7 @@ xcode-select --install
 - Ignore the section titled [*Configure Sonar for C#*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#configure-sonar-for-c) (unless you'll be writing C#).
 - Also note that step 5 will not work if the correct location for the JRE isn't set.
 - By the end of this sections, your `setting.json` should include lines 20-26 as shown below:
-![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/settings-json-post-vs-code-installation.png)
+![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/settings-json-post-vs-code-installation.png)
 - The location of the JRE might not be the same for everyone. I.e. the one I ended up using may not be (but hopefully will be) the same as location on a different device.
 ***
 ### Docker Compose
@@ -208,7 +208,7 @@ brew install --cask microsoft-azure-storage-explorer
 ##### Instructions
 - Install the [GraphQL: Syntax Highlighting Extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql-syntax) via VS Code
 - To implement the extension when writing out `typeDefs` (type definitions), add `#graphql` at the top of the `typeDefs` (see example below):
-![graphql-syntax-highlighting.png](https://github.com/rtasalem/macbook-config/blob/main/graphql-syntax-highlighting.png)
+![graphql-syntax-highlighting.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/graphql-syntax-highlighting.png)
 ***
 ### Jenkins
 -> Is needed to access CI/CD pipelines.
@@ -218,9 +218,27 @@ brew install --cask microsoft-azure-storage-explorer
 - Enter the username and password provided in the email and you should now be able to log into the Jenkins dashboard.
 ##### Comments
 - None.
+***
 ### Lens
 -> Kubernetes IDE used to access pods.
 ##### Instructions
 - [Download and install Lens](https://formulae.brew.sh/cask/lens).
 - Ensure that kubectl and Azure CLI have been installed (these are prerequisites and should have already been installed when going through [DEFRA's original dev guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/README.md)).
 - Follow the steps in the documentation (on Confluence) for connecting Lens to Kubernetes Clusters.
+***
+### env Set-up
+-> Easy way to set up environment variables across multiple repos.
+##### Instructions
+- Simon D (senior developer at DEFRA) taught me about this one (and he learned it from Steve H).
+- On Mac, you can set up symbolic links [symbolic links (or symlinks)](https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/). You can set up a directory for a specific team or a set of microservices where a "master" `.env` file will be created/stored
+- E.g. for the Farming Front Door (FFD) team under the Future Farming & Countryside (FFC) programme you could name the directory `ffc-ffd-env` (Simon also showed me this naming system which works really well considering all repos under the FFD team are prefixed with `ffc-ffd`) and all that this directory needs to contain is a single `.env` file where we can store all the environment variable for all `ffc-ffd` microservices).
+- Once you have collated all the environment variables across the set of related repos and pasted them into the master `.env`, all that's left to do is is to create the symlink in a repo where you need to include environment variables.
+- The following command is used to achieve this:
+```
+ln -nfsv source_file link_name
+```
+- You would execute this command in the repo for which you want the environment variables linked with the master `.env`. As an example, here's what the command would look like if being executed from the root of the repo itself (replace `repo` with the name of the service):
+```
+ln -nfsv ../ffc-ffd-repo/.env .env
+```
+- This makes it a lot easier to update `.env` files across a set of microservices because when a new environment variable comes along or a variable needs updating, you can simply copy and paste the variable(s) into any `.env` file regardless of which repo you have open - the symlink will ensure that it is updated in the master `.env` as well.

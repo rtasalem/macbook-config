@@ -68,13 +68,24 @@ This document serves as a complete guide to setting up a personal MacBook device
 	- Open `Settings` > `Kubernetes` > check the box that says `Enable Kubernetes` > click `Apply`.
 - [ ] Gatsby CLI
 	 - Should be installed globally. Open terminal and run the following command (if installing via `npm` isn't successful, use Homebrew):
-```
-npm install -g gatsby-cli
-```
-*OR*
-```
-brew install gatsby-cli
-```
-- [ ] .env Setup
-	- Simon taught me about this one. It's a way to set up .env files on Mac so that if new/updated variables are needed for a specific repo's `.env` file, it only has to be changed once.
-	- The way to achieve this is by using [symbolic links (or symlinks)](https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/).
+	```
+	npm install -g gatsby-cli
+	```
+	*OR*
+	```
+	brew install gatsby-cli
+	```
+- [ ] .env set-up
+	- Simon D taught me about this one (and he learned it from Steve H)!
+	- On Mac, you can set up symbolic links [symbolic links (or symlinks)](https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/). You can set up a directory for a specific team or a set of microservices where a "master" `.env` file will be created/stored
+	- E.g. for the Farming Front Door (FFD) team under the Future Farming & Countryside (FFC) programme you could name the directory `ffc-ffd-env` (Simon also showed me this naming system which works really well considering all repos under the FFD team are prefixed with `ffc-ffd`) and all that this directory needs to contain is a single `.env` file where we can store all the environment variable for all `ffc-ffd` microservices).
+	- Once you have collated all the environment variables across the set of related repos and pasted them into the master `.env`, all that's left to do is is to create the symlink in a repo where you need to include environment variables.
+	- The following command is used to achieve this:
+	```
+	ln -nfsv source_file link_name
+	```
+	- You would execute this command in the repo for which you want the environment variables linked with the master `.env`. As an example, here's what the command would look like if being executed from the root of the repo itself (replace `repo` with the name of the service):
+	```
+	ln -nfsv ../ffc-ffd-repo/.env .env
+	```
+	- This makes it a lot easier to update `.env` files across a set of microservices because when a new environment variable comes along or a variable needs updating, you can simply copy and paste the variable(s) into any `.env` file regardless of which repo you have open - the symlink will ensure that it is updated in the master `.env` as well.

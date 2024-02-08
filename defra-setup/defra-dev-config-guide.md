@@ -15,7 +15,6 @@ xcode-select --install
 - This one takes a wee while.
 ***
 ### Docker Desktop
-
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/setup-macbook.md#install-docker-desktop-for-mac).
 ##### Instructions
 - [Download Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/).
@@ -218,9 +217,27 @@ brew install --cask microsoft-azure-storage-explorer
 - Enter the username and password provided in the email and you should now be able to log into the Jenkins dashboard.
 ##### Comments
 - None.
+***
 ### Lens
 -> Kubernetes IDE used to access pods.
 ##### Instructions
 - [Download and install Lens](https://formulae.brew.sh/cask/lens).
 - Ensure that kubectl and Azure CLI have been installed (these are prerequisites and should have already been installed when going through [DEFRA's original dev guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/README.md)).
 - Follow the steps in the documentation (on Confluence) for connecting Lens to Kubernetes Clusters.
+***
+### env Set-up
+-> Easy way to set up environment variables across multiple repos.
+##### Instructions
+- Simon D (senior developer at DEFRA) taught me about this one (and he learned it from Steve H).
+- On Mac, you can set up symbolic links [symbolic links (or symlinks)](https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/). You can set up a directory for a specific team or a set of microservices where a "master" `.env` file will be created/stored
+- E.g. for the Farming Front Door (FFD) team under the Future Farming & Countryside (FFC) programme you could name the directory `ffc-ffd-env` (Simon also showed me this naming system which works really well considering all repos under the FFD team are prefixed with `ffc-ffd`) and all that this directory needs to contain is a single `.env` file where we can store all the environment variable for all `ffc-ffd` microservices).
+- Once you have collated all the environment variables across the set of related repos and pasted them into the master `.env`, all that's left to do is is to create the symlink in a repo where you need to include environment variables.
+- The following command is used to achieve this:
+```
+ln -nfsv source_file link_name
+```
+- You would execute this command in the repo for which you want the environment variables linked with the master `.env`. As an example, here's what the command would look like if being executed from the root of the repo itself (replace `repo` with the name of the service):
+```
+ln -nfsv ../ffc-ffd-repo/.env .env
+```
+- This makes it a lot easier to update `.env` files across a set of microservices because when a new environment variable comes along or a variable needs updating, you can simply copy and paste the variable(s) into any `.env` file regardless of which repo you have open - the symlink will ensure that it is updated in the master `.env` as well.

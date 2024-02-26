@@ -27,7 +27,7 @@ This document serves as a complete guide to setting up a personal MacBook device
 
 ## Apps
 
-[(Homebrew can install a bunch of these apps, if not all of them).](https://github.com/rtasalem/macbook-config/blob/main/brew-install-commands.md)
+[(Homebrew can install a bunch of these apps, if not all of them).](https://github.com/rtasalem/macbook-config/blob/main/personal-setup/brew-install-commands.md)
 
 - [ ] [Bitwarden](https://apps.apple.com/gb/app/bitwarden/id1352778147?mt=12)
 - [ ] [Surfshark](https://surfshark.com/download)

@@ -48,7 +48,7 @@ This document serves as a complete guide to setting up a personal MacBook device
 ## Software Development
 
 - [ ] [Homebrew](https://brew.sh/)
-- [ ] [VS Code](https://code.visualstudio.com/Download) (don't forget to [set up the config for your VS Code environment](https://github.com/rtasalem/macbook-config/blob/main/vs-code-config.md))
+- [ ] [VS Code](https://code.visualstudio.com/Download) (don't forget to [set up the config for your VS Code environment](https://github.com/rtasalem/macbook-config/blob/main/personal-setup/vs-code-config.md))
 - [ ] [Git](https://github.com/git-guides/install-git)
 - [ ] [Node.js & NPM (Node Package Manager)](https://nodejs.org/en)
   - Select the version that is `Recommended for Most Users`

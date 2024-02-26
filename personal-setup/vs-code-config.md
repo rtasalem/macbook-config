@@ -7,7 +7,7 @@
 - [ ] [VS Code Icons (VS Code Icons Team)](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) 
 - [ ] [Rainbow Brackets (Mhammed Talhaouy)](https://marketplace.visualstudio.com/items?itemName=tal7aouy.rainbow-bracket) 
 - [ ] [indent-raindow (oderwat)](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) 
-- [ ] [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 
+- [ ] [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - within the `settings.json` ensure to set the following configuration for Prettier: `"prettier.singleQuote": true`. This means that when formatting, by default Prettier will wrap strings in single quotes rather than double quotes (look out for this syntax with languages that distinguish between single and double quotes!).
 - [ ]  Set the colour of comments so that they stand out, don't have a similar colour to the actual code, and aren't so faded that they are hard to read. The photo below shows what should be added into the `settings.json` to set the comments to a light pinkish colour which is mostly distinct from the colour applied to actual code:
 ![comments-colour.png](https://github.com/rtasalem/macbook-config/blob/main/personal-setup/comments-colour.png)
 #### Java

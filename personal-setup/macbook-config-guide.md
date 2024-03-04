@@ -68,7 +68,7 @@ This document serves as a complete guide to setting up a personal MacBook device
 - [ ] [PyCharm](https://www.jetbrains.com/pycharm/download/?section=mac) - Python IDE (if needed, but VS Code should be suitable)
   - Scroll down for the free community edition, the professional edition which is shown on the landing page is not free
   - Instructions can be found in the Python tutorial YouTube link (see above)
-  - Make sure to [install PyCharm extensions](https://github.com/rtasalem/macbook-config/blob/main/personal-setup/pycharm-extensions.md)
+  - Make sure to [install PyCharm extensions](https://github.com/rtasalem/macbook-config/blob/main/personal-setup/pycharm-extensions.md).
 - [ ] [Java](https://www.java.com/en/download/help/download_options.html)
 - [ ] [Eclipse Enterprise Edition](https://www.guru99.com/install-eclipse-java.html) - ensure to download the Enterprise edition and once that's finished, [install extensions used with Eclipse](https://github.com/rtasalem/macbook-config/blob/main/personal-setup/eclipse-extensions.md).
 - [ ] [Postman](https://www.postman.com/downloads/)

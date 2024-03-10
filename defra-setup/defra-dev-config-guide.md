@@ -238,6 +238,16 @@ ln -nfsv source_file link_name
 ```
 - You would execute this command in the repo for which you want the environment variables linked with the master `.env`. As an example, here's what the command would look like if being executed from the root of the repo itself (replace `repo` with the name of the service):
 ```
-ln -nfsv ../ffc-ffd-repo/.env .env
+ln -nfsv ../ffc-sfd-env/.env .env
 ```
 - This makes it a lot easier to update `.env` files across a set of microservices because when a new environment variable comes along or a variable needs updating, you can simply copy and paste the variable(s) into any `.env` file regardless of which repo you have open - the symlink will ensure that it is updated in the master `.env` as well.
+***
+### yq
+-> To be able to run commands from DEFRA's [ffc-azure-service-bus-scripts](https://github.com/defra/ffc-azure-service-bus-scripts)
+##### Instructions
+- Not a requirement to be installed on offnet machine, but I did need to install this in order to run the scripts in the repo mentioned above so I could create service bus queues.
+- Installed using [Homebrew](https://github.com/mikefarah/yq?tab=readme-ov-file#macos--linux-via-homebrew):
+```
+brew install yq
+```
+***

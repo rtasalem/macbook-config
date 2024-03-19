@@ -4,7 +4,8 @@
 ### Extensions
 #### Theme & Appearance
 - [ ] [One Dark Pro Monokai Darker Theme (Eser Ozvataf)](https://marketplace.visualstudio.com/items?itemName=eserozvataf.one-dark-pro-monokai-darker)
-- [ ] [VS Code Icons (VS Code Icons Team)](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) 
+- [ ] [Material Theme Icons (Equinusocio)](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme-icons) (set to the Palenight theme)
+- [ ] [VS Code Icons (VS Code Icons Team)](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)  (prefer the previous one as it has more icons included)
 - [ ] [Rainbow Brackets (Mhammed Talhaouy)](https://marketplace.visualstudio.com/items?itemName=tal7aouy.rainbow-bracket) 
 - [ ] [indent-raindow (oderwat)](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) 
 - [ ] [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - within the `settings.json` ensure to set the following configuration for Prettier:

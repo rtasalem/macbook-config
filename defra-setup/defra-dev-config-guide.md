@@ -251,3 +251,12 @@ ln -nfsv ../ffc-sfd-env/.env .env
 brew install yq
 ```
 ***
+### NPM Save Prefix
+-> Configuring save prefix to remove the `^` that is prefixed to the version number of NPM packages after installing them/when they are listed in the `package.json`.
+##### Instructions
+- Open terminal and run the following command:
+```
+npm config set save-prefix=''
+```
+- This will remove the caret (`^`) from the version numbers of NPM packages in the `package.json`. This can also be used to change the prefix to whatever symbol you want e.g. `~`.
+- Just removed it because it was suggested to do.

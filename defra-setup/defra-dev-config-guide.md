@@ -88,11 +88,21 @@ detect-secrets --version
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-node-version-manager.md).
 ##### Instructions
 - Personally, I just used [Homebrew to install NVM](https://formulae.brew.sh/formula/nvm).
+- If Homebrew doesn't work (which was the case when I got a second Mac to replace the first), then just run the following command:
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
 ##### Comments
 - Open terminal, run the following command to verify installation:
 ```
 nvm --version
 ```
+- If after running the `curl` command you get `command not found: nvm` as a response, load up the root directory, create a file called `.zshrc` (use the command: `touch .zshrc`, make sure you are `cd`-ed into the root directory). Once you've created this file, open it using TextEdit and paste in the following:
+```
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+```
+- The reason for needing to do this is because your terminal isn't loading `nvm` automatically whenever you open a new terminal window, by having the above script in your `.zshrc` file (which you can think of a terminal config/profile), `nvm` will now be accessible and running the above version command should now work.
 ***
 ### .NET SDK
 -> [Reference point in DEFRA's original guide]().

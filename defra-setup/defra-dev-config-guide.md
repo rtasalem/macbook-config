@@ -36,6 +36,10 @@ xcode-select --install
 	- Take this ID and run the following commands:
 		  `git config --global user.signingkey 3AA5C34371567BD2`
 		  `git config --global commit.gpgsign true`
+		  - Note that when I was setting up the second Mac, commit signing didn't work after using the two commands above. Needed to get global name and email for git:
+		    `git config --global user.name "<first-and-last-name>"
+		    `git config --global user.email <email-address>
+		    - Once I had set global config for git, I ran the two commands (referring to the `git config --global user.signingkey...` and `git config --global commit.gpgsign true`) and once I tested my commit signing (through pushing to a dummy branch/PR, my commits were shown as `Verified`).
 	- In VS Code, navigate to your `settings.json` and copy and past the following:
 		`"git.enableCommitSigning" : true`
 - Test your commits again, using a dummy repo and with all fingers crossed, your commits should now appear as `Verified`.

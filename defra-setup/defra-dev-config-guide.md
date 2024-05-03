@@ -54,7 +54,9 @@ xcode-select --install
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md).
 ##### Instructions
 - Instead of `using sudo apt-get install openjdk-11-jre` to install JDK (Java Development Kit), use Homebrew: `brew install openjdk`. 
-- After installing the [SonarLint extension](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) in VS Code, the guide mentions setting the location of the JRE (Java Runtime Environment) in your VS Code settings (i.e. the `settings.json`), put the path used is incorrect.
+	- After installing OpenJDK, run the following commands: `echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc` and `sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk`.
+	- The run `java -version` and you should see 3 lines of output as the response, this confirms that OpenJDK was sucessfully installed.
+- After installing the [SonarLint extension](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) in VS Code, the guide mentions setting the location of the JRE (Java Runtime Environment) in your VS Code settings (i.e. the `settings.json`), but the path used is incorrect.
 - For me, the correct path, which I have in my settings.json to use was: `"sonarlint.ls.javaHome": "/usr/local/opt/openjdk/libexec/openjdk.jdk"`.
 - A useful way of finding the correct path to the JRE is to use open *Go* in the Mac toolbar and select *Go to Folder*. This way you can find the JRE location you want to set in the `settings.json`.
 - Continue to follow the instructions, [ignoring step 4 under the section titled *SonarLint Installation (VS Code)*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#sonarlint-installation-vs-code) as this applies to individual projects rather than your VS Code environment.

@@ -59,6 +59,7 @@ xcode-select --install
 - After installing the [SonarLint extension](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) in VS Code, the guide mentions setting the location of the JRE (Java Runtime Environment) in your VS Code settings (i.e. the `settings.json`), but the path used is incorrect.
 - For me, the correct path, which I have in my settings.json to use was: `"sonarlint.ls.javaHome": "/usr/local/opt/openjdk/libexec/openjdk.jdk"`.
 - A useful way of finding the correct path to the JRE is to use open *Go* in the Mac toolbar and select *Go to Folder*. This way you can find the JRE location you want to set in the `settings.json`.
+	- UPDATE: A better way of finding the path to the JRE is to open finder then `cmd` + `shift` + `G`, which will open the *Go To Folder* pop up, here you can start typing in the path e.g. `user/local/opt/openjdk...` etc. until you find the path to your JRE to include in your `settings.json`.
 - Continue to follow the instructions, [ignoring step 4 under the section titled *SonarLint Installation (VS Code)*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#sonarlint-installation-vs-code) as this applies to individual projects rather than your VS Code environment.
 ##### Comments
 - Ignore the section titled [*Configure Sonar for C#*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#configure-sonar-for-c) (unless you'll be writing C#).

@@ -15,6 +15,10 @@ brew install --cask bitwarden
 ```
 brew install --cask docker
 ```
+- draw.io
+```
+brew install --cask drawio
+```
 #### E
 - Eclipse Enterprise Edition (Java IDE): 
 ```
@@ -62,6 +66,10 @@ brew install --cask obsidian
 brew install --cask microsoft-outlook
 ```
 #### P
+- pgAdmin 4:
+```
+brew install --cask pgadmin4
+```
 - Postman: 
 ```
 brew install --cask postman
@@ -86,7 +94,7 @@ brew install --cask surfshark
 #### T
 - Teams: 
 ```
-brew install --cask microsoft teams
+brew install --cask microsoft-teams
 ```
 #### V
 - Visual Studio Code: 

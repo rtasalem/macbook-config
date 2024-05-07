@@ -84,7 +84,9 @@ xcode-select --install
 ##### Instructions
 - Follow the original guide as described.
 ##### Comments
+- Note that once Python is installed, pip is also automatically installed as well.
 - At first thought I did not properly install Python as the `python --version` command was not showing the version post-installation, but actually the correct command to run was `python3 --version` (i.e. version 3). Same issue occurred with Pip, but again just had to run the version command as `pip3 --version`.
+- After using Homebrew to install pre-commit, verify installation by running `pre-commit --version`.
 - Generally if there are any installation issues during this step, just use Homebrew.
 - Open terminal, run the following command to verify installation:
 ```
@@ -134,6 +136,7 @@ dotnet tool install --global dotnet-ef
 ```
 kubectl version
 ```
+- Note that the instructions mention running the command `kubectl version -client`, but running the above command will list the client version regardless and will provide additional information.
 ***
 ### Helm
 -> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/installing-helm.md).
@@ -277,3 +280,11 @@ npm config set save-prefix=''
 ```
 - This will remove the caret (`^`) from the version numbers of NPM packages in the `package.json`. This can also be used to change the prefix to whatever symbol you want e.g. `~`.
 - Just removed it because it was suggested to do.
+***
+### Azure Data Studio
+-> Originally used this to clean up database (remove duplicated etc.) from SND3 database on ADP using PostgreSQL syntax.
+##### Instructions
+- Install [Azure Data Studio](https://azure.microsoft.com/en-gb/products/data-studio).
+- Once installed, open the application, add your account (MENTION WHICH ACCOUNT SPECIFICALLY).
+- Navigate to the Extensions tab and search for PostgreSQL, install the official PostgreSQL extension.
+- Click New connection and connect to desired database.

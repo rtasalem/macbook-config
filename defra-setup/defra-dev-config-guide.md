@@ -104,7 +104,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ##### Comments
 - Open terminal, run the following command to verify installation:
 ```
-nvm --version
+nvm -v
 ```
 - If after running the `curl` command you get `command not found: nvm` as a response, load up the root directory, create a file called `.zshrc` (use the command: `touch .zshrc`, make sure you are `cd`-ed into the root directory). Once you've created this file, open it using TextEdit and paste in the following:
 ```
@@ -112,6 +112,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 ```
 - The reason for needing to do this is because your terminal isn't loading `nvm` automatically whenever you open a new terminal window, by having the above script in your `.zshrc` file (which you can think of a terminal config/profile), `nvm` will now be accessible and running the above version command should now work.
+- Use NVM to install Node.js and NPM. Run the command `nvm ls-remote` to list all the current version of Node.js. Find the latest version with LTS (Long term Support) written beside it, this is the version you'll want to install.
+- Then just run the install command: `nvm install [version no.]` (e.g. `nvm install 20`).
 ***
 ### .NET SDK
 -> [Reference point in DEFRA's original guide]().
@@ -204,6 +206,7 @@ brew install openvpn
 openvpn --version
 ```
 - If OpenVPN isn't connecting, repeat steps 1-10 above (you may not need to update to the latest version) and the VPN should now connect.
+- Note that you will not be able to log into the Azure Portal/view resources if OpenVPN is not first installed and connected.
 ***
 ## Other
 Below this point is other additional config that I've done for my Mac that is not in the original guide.

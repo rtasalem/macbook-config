@@ -11,7 +11,13 @@ This document details the set-up of a MacBook to use for software development wi
 6. Docker Compose
 7. detect-secrets
 8. Node Version Manager (NVM)
-9. 
+9. .NET SDK
+10. kubectl
+11. Helm
+12. Azure CLI
+13. Snyk CLI
+14. GitHub CLI
+15. OpenVPN
 ***
 ### [Developer Tools](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/setup-macos-command-line-tools.md)
 ##### Instructions
@@ -120,8 +126,7 @@ export NVM_DIR="$HOME/.nvm"
 - Then just run the install command: `nvm install [version no.]` (e.g. `nvm install 20` as version 20 of Node.js was the latest LTS version at the time of setting up the second Mac).
 - Note that installing Node.js also installs NPM (run both `node -v` and `npm -v` to verify both were installed).
 ***
-### .NET SDK
--> [Reference point in DEFRA's original guide]().
+### [.NET SDK](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-dotnet-sdk.md)
 ##### Instructions
 - Follow the guide as is.
 ##### Comments
@@ -134,8 +139,7 @@ dotnet --version
 dotnet tool install --global dotnet-ef
 ```
 ***
-### kubectl
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-kubectl.md).
+### [kubectl](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-kubectl.md)
 ##### Instructions
 - In the instructions, Homebrew was one of the recommendations for [installing kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos), this is what I used. 
 ##### Comments
@@ -143,10 +147,9 @@ dotnet tool install --global dotnet-ef
 ```
 kubectl version
 ```
-- Note that the instructions mention running the command `kubectl version -client`, but running the above command will list the client version regardless and will provide additional information.
+- Note that the instructions mention running the command `kubectl version -client`, but running the above command will list the client version regardless and will provide additional information too.
 ***
-### Helm
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/installing-helm.md).
+### [Helm](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-helm.md)
 ##### Instructions
 - Again, Homebrew was one of the recommendations for [installing Helm](https://helm.sh/docs/intro/install/#through-package-managers).
 ##### Comments
@@ -155,11 +158,10 @@ kubectl version
 helm version
 ```
 ***
-### Azure CLI
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-azure-cli.md).
+### [Azure CLI](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-azure-cli.md)
 ##### Instructions
 - Once again, Homebrew can be used to install [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos).
-- Log in to Azure Tenant using the command provided in the guide (see the reference point provided above) via your terminal. 
+- Log in to Azure Tenant using the command provided in the guide via your terminal. 
 - You'll need to get your credentials from CCoE (Cloud Centre of Excellence).
 ##### Comments
 - Verify installation using the following command:
@@ -167,28 +169,25 @@ helm version
 az version
 ```
 ***
-### Snyk CLI
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-snyk.md).
+### [Snyk CLI](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-snyk.md)
 ##### Instructions
-- No surprise, you can install [Snyk CLI using Homebrew](https://docs.snyk.io/snyk-cli/install-or-update-the-snyk-cli#install-with-homebrew-macos-linux).
+- No surprise, you can [install Snyk CLI using Homebrew](https://docs.snyk.io/snyk-cli/install-or-update-the-snyk-cli#install-with-homebrew-macos-linux).
 ##### Comments
 - Run the following command to verify installation:
 ```
 snyk --version
 ```
 ***
-### GitHub CLI
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-github.md).
+### [GitHub CLI](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-github.md)
 ##### Instructions
 - Yes, of course you can [install GitHub CLI using Homebrew](https://github.com/cli/cli).
 ##### Comments
-- Verify installation by running the following command to check the version of GitHub CLI that was installed:
+- Verify installation by running the following command:
 ```
 gh --version
 ```
 ***
-### OpenVPN
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-openvpn.md).
+### [OpenVPN](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-openvpn.md)
 ##### Instructions
 - Run the following commands:
 ```
@@ -197,12 +196,12 @@ brew install openvpn
 - You will need to get your OpenVPN credentials from the CCoE:
 	1. Navigate to the OpenVPN link provided in the email.
 	2. You'll see a login page, select *Sign In via SAML*.
-	3. Enter your DEFRA credentials.
+	3. Enter your Defra credentials.
 	4. Most likely a MFA prompt will pop-up, complete this.
 	5. Once authenticated, you will be able to download the latest VPN client software i.e. OpenVPN Connect, download the version under the heading *Recommended for your device*.
-	6. Launch the installed OpenVPN Connent app, you'll see a pop-up showing your DEFRA VPN profile.
-	7. Next to your name/credentials there will be a on/off toggle, toggle this to on.
-	8. If it appears to be taking some time to connect to OpenVPN, click the menu icon in the top left (this will appear as 3 horizontal lines on top of each other) and if you see an option to install the latest OpenVPN update, do this.
+	6. Launch the installed OpenVPN Connect app, you'll see a pop-up showing your Defra VPN profile.
+	7. Next to your name/credentials there will be a on/off toggle, toggle this on.
+	8. If it appears to be taking some time to connect to OpenVPN, click the menu icon in the top left (this will appear as 3 stacked horizontal lines) and if you see an option to install the latest OpenVPN update, do this.
 	9. Once the update is installed, try again to turn on the connection and this should get you connected a lot faster.
 	10. Now you're all connected with OpenVPN and there's nothing left to do.
 ##### Comments

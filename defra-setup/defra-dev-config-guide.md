@@ -1,9 +1,19 @@
 # DEFRA Developer Config Guide
 ## Summary
-This document details the set-up of a MacBook to use for software development within the FCP under DEFRA. The original repo detailing the set-up can be found on [DEFRA's official GitHub](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/README.md). Please use the original guide as the main set of instructions and only refer to this guide when there's any problems. The following information is simply the documentation of my own set-up and any additional steps which helped my Mac set-up whenever I was having issues. Spoiler alert, Homebrew solved a lot of these problems ([installing Homebrew](https://brew.sh/) should probably be the first thing you do).
+This document details the set-up of a MacBook to use for software development within the FCP (or FFC) under Defra. The original guide detailing the set-up can be found on [Defra's official GitHub](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/index.md). Use the original guide as the main set of instructions and only refer to this guide when there's any problems. The following information is simply the documentation of my own set-up and any additional steps which helped my Mac set-up whenever I was having issues. Spoiler alert, Homebrew solved a lot of these problems ([installing Homebrew](https://brew.sh/) should probably be the first thing you do, alongside making sure you're Mac has the latest MacOS updates).
 ***
-### Developer Tools
--> [Reference in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/setup-macbook.md#install-developer-tools).
+### Contents
+1. Developer Tools
+2. Docker Desktop
+3. Signing Commits
+4. Visual Studio Code
+5. SonarLint
+6. Docker Compose
+7. detect-secrets
+8. Node Version Manager (NVM)
+9. 
+***
+### [Developer Tools](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/setup-macos-command-line-tools.md)
 ##### Instructions
 - Open `terminal` and run the following command: 
 ```
@@ -12,21 +22,20 @@ xcode-select --install
 - A pop-up window will appear stating that the `xcode-select` command requires the command line developer tools, click install and wait for the process to finish.
 - Run the command again to verify installation. The output should say something along the lines of `Command line tools are already installed...`.
 ##### Comments
-- This one takes a wee while.
+- This one may take a wee while.
 ***
-### Docker Desktop
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/setup-macbook.md#install-docker-desktop-for-mac).
+### [Docker Desktop](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-docker-desktop.md)
+
 ##### Instructions
 - [Download Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/).
 ##### Comments
-- If your Mac is not fully updated to the latest OS, then Docker Desktop may not open. Open `System Settings` and begin the OS update (this step also takes a while, but Docker Desktop should be able to open just fine afterwards).
+- If your Mac is not fully updated to the latest OS, then Docker Desktop may not open. Open `System Settings` and begin the OS update (this step can takes a while, but Docker Desktop should be able to open just fine afterwards).
 ***
-### Signing Commits (a.k.a ensuring your commits on GitHub have that cool Verified tag next to your username)
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/sign-commits.md).
+### [Signing Commits (a.k.a ensuring your commits on GitHub have the Verified tag next to your username)](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/sign-commits.md)
 ##### Instructions
 - Follow the instructions in the reference point (see above).
 ##### Comments
-- Test that your commits are being signed by creating a dummy repo and pushing to that repo.
+- Test that your commits are being signed by creating a dummy repo and pushing to that repo (or just make a commit to any draft/open PR on any repo).
 - If for whatever reason commits are not shown as `Verified` on GitHub, don't fret, the same happened to me. Here's what I did:
 	- Some frantic Googling, which led me to [the answer](https://dev.to/devmount/signed-git-commits-in-vs-code-36do).
 	- In the above link, skip to the section titled *Set up GitHub*. It explains that you can tell Git your GPG key ID. First, get the ID of the GPG key you just created using this command:
@@ -36,65 +45,59 @@ xcode-select --install
 	- Take this ID and run the following commands:
 		  `git config --global user.signingkey 3AA5C34371567BD2`
 		  `git config --global commit.gpgsign true`
-		  - Note that when I was setting up the second Mac, commit signing didn't work after using the two commands above. Needed to get global name and email for git:
+		- Note that when I was setting up the second Mac, commit signing didn't work after using the two commands above. Needed to set the global name and email for Git:
 		    `git config --global user.name "<first-and-last-name>"
 		    `git config --global user.email <email-address>
-		    - Once I had set global config for git, I ran the two commands (referring to the `git config --global user.signingkey...` and `git config --global commit.gpgsign true`) and once I tested my commit signing (through pushing to a dummy branch/PR, my commits were shown as `Verified`).
+		- Once I had set global config for Git, I ran the two commands (here referring to the `git config --global user.signingkey...` and `git config --global commit.gpgsign true` commands) and once I tested my commit signing (through pushing to a dummy branch/PR, my commits were shown as `Verified`).
 	- In VS Code, navigate to your `settings.json` and copy and past the following:
 		`"git.enableCommitSigning" : true`
 - Test your commits again, using a dummy repo and with all fingers crossed, your commits should now appear as `Verified`.
 ***
-### Visual Studio Code
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-vs-code.md).
+### [Visual Studio Code](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-vs-code.md)
 ##### Instructions
-- Follow the guide, ignore the section titled *WSL Configuration* (this applies to Windows Devices only).
+- Follow the guide, ignore the section titled `WSL Configuration` (this applies to Windows Devices only).
 ##### Comments
 - This section has a lot of bits that need to be added to your `settings.json` file in VS Code. To find your `settings.json`, open VS Code and hit `cmd` + `,` this will open the User Settings screen. From here, click the `Open Settings (JSON)` button in the top right corner (see below).
 ![locating-settings-json.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/locating-settings-json.png)
-- After following the guide, your `settings.json` should look something similar to the below image (your `settings.json` *needs* to include lines 11-17 by the end of this step):
+- After following the guide, your `settings.json` should look something similar to the below image:
 ![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/settings-json-post-vs-code-installation.png)
 ***
-### SonarLint
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md).
+### [SonarLint](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-sonarlint.md)
 ##### Instructions
 - Instead of `using sudo apt-get install openjdk-11-jre` to install JDK (Java Development Kit), use Homebrew: `brew install openjdk`. 
 	- After installing OpenJDK, run the following commands: `echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc` and `sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk`.
-	- The run `java -version` and you should see 3 lines of output as the response, this confirms that OpenJDK was sucessfully installed.
-- After installing the [SonarLint extension](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) in VS Code, the guide mentions setting the location of the JRE (Java Runtime Environment) in your VS Code settings (i.e. the `settings.json`), but the path used is incorrect.
-- For me, the correct path, which I have in my settings.json to use was: `"sonarlint.ls.javaHome": "/usr/local/opt/openjdk/libexec/openjdk.jdk"`.
-- A useful way of finding the correct path to the JRE is to use open *Go* in the Mac toolbar and select *Go to Folder*. This way you can find the JRE location you want to set in the `settings.json`.
-	- UPDATE: A better way of finding the path to the JRE is to open finder then `cmd` + `shift` + `G`, which will open the *Go To Folder* pop up, here you can start typing in the path e.g. `user/local/opt/openjdk...` etc. until you find the path to your JRE to include in your `settings.json`.
-- Continue to follow the instructions, [ignoring step 4 under the section titled *SonarLint Installation (VS Code)*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#sonarlint-installation-vs-code) as this applies to individual projects rather than your VS Code environment.
+	- Then run `java -version` and you should see 3 lines of output as the response, this confirms that OpenJDK was successfully installed.
+- After installing the [SonarLint extension](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) in VS Code, the guide mentions setting the location of the JRE (Java Runtime Environment) in your VS Code settings (i.e. the `settings.json`), but the path specified in the guide incorrect (at least it was for me). 
+- The correct path I had to use which I have in my `settings.json` to use was: `
+```
+"sonarlint.ls.javaHome": "/usr/local/opt/openjdk/libexec/openjdk.jdk"`
+```
+-  A good way of finding the path to the JRE is to open finder then `cmd` + `shift` + `G`, which will open the *Go To Folder* pop up, here you can start typing in the path e.g. `user/local/opt/openjdk...` etc. until you find the path to your JRE to include in your `settings.json`.
+- Continue to follow the instructions, ignoring step 4 under the section titled *SonarLint Installation (VS Code)* as this applies to individual projects rather than your VS Code environment.
 ##### Comments
-- Ignore the section titled [*Configure Sonar for C#*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#configure-sonar-for-c) (unless you'll be writing C#).
-- Also note that step 5 will not work if the correct location for the JRE isn't set.
+- Ignore the section titled [*Configure Sonar for C#*](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-sonarlint.md#configure-sonar-for-c) (unless you'll be writing C#, at the time of setting up the Mac I was writing JavaScript).
+- Also note that step 5 will not work if the correct location for the JRE isn't set (not 100% sure if this is a bad thing, haven't encountered any issues with it so far).
 - By the end of this sections, your `setting.json` should include lines 20-26 as shown below:
 ![settings-json-post-vs-code-installation.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/settings-json-post-vs-code-installation.png)
-- The location of the JRE might not be the same for everyone. I.e. the one I ended up using may not be (but hopefully will be) the same as location on a different device.
+- The location of the JRE might not be the same for everyone. I.e. the one I ended up using may not be (but hopefully will be) the same location on a different device.
 ***
-### Docker Compose
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-docker-compose.md#install-docker-compose).
+### [Docker Compose](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-docker-compose.md)
 ##### Instructions
 - There aren't any instructions for this step. If you downloaded Docker Desktop, then you already have Docker Compose.
 ##### Comments
 - None.
 ***
-### detect-secrets
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-detect-secrets.md).
+### [detect-secrets](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-detect-secrets.md)
 ##### Instructions
 - Follow the original guide as described.
 ##### Comments
-- Note that once Python is installed, pip is also automatically installed as well.
-- At first thought I did not properly install Python as the `python --version` command was not showing the version post-installation, but actually the correct command to run was `python3 --version` (i.e. version 3). Same issue occurred with Pip, but again just had to run the version command as `pip3 --version`.
+- Note that once Python is installed, Pip is also automatically installed as well.
+- At first thought I did not properly install Python as the `python --version` command was not showing the version post-installation, but actually the correct command to run was `python3 --version` (i.e. version 3 of Python). Same issue occurred with Pip, but again just had to run the version command as `pip3 --version`.
 - After using Homebrew to install pre-commit, verify installation by running `pre-commit --version`.
 - Generally if there are any installation issues during this step, just use Homebrew.
-- Open terminal, run the following command to verify installation:
-```
-detect-secrets --version
-```
+- Open terminal, run the following command to verify installation: `detect-secrets --version`.
 ***
-### Node Version Manager (NVM)
--> [Reference point in DEFRA's original guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/install-node-version-manager.md).
+### [Node Version Manager (NVM)](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-node-version-manager.md)
 ##### Instructions
 - Personally, I just used [Homebrew to install NVM](https://formulae.brew.sh/formula/nvm).
 - If Homebrew doesn't work (which was the case when I got a second Mac to replace the first), then just run the following command:
@@ -111,9 +114,11 @@ nvm -v
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 ```
-- The reason for needing to do this is because your terminal isn't loading `nvm` automatically whenever you open a new terminal window, by having the above script in your `.zshrc` file (which you can think of a terminal config/profile), `nvm` will now be accessible and running the above version command should now work.
-- Use NVM to install Node.js and NPM. Run the command `nvm ls-remote` to list all the current version of Node.js. Find the latest version with LTS (Long term Support) written beside it, this is the version you'll want to install.
-- Then just run the install command: `nvm install [version no.]` (e.g. `nvm install 20`).
+- The reason for needing to do this is because your terminal isn't loading `nvm` automatically whenever you open a new terminal window, by having the above script in your `.zshrc` file (which you can think of as a terminal config/profile), `nvm` will now be accessible and running the above version command should now work.
+- Use NVM to install Node.js and NPM. This is highly recommended as installing Node.js and NPM this way prevents permission issues/blockers that other ways of installing often introduce (e.g. installing Node.js & NPM from the web resulted in not being able to globally install certain NPM packages).
+- Run the command `nvm ls-remote` to list all the current versions of Node.js. Find the latest version with LTS (Long term Support) written beside it, this is the version you'll want to install.
+- Then just run the install command: `nvm install [version no.]` (e.g. `nvm install 20` as version 20 of Node.js was the latest LTS version at the time of setting up the second Mac).
+- Note that installing Node.js also installs NPM (run both `node -v` and `npm -v` to verify both were installed).
 ***
 ### .NET SDK
 -> [Reference point in DEFRA's original guide]().

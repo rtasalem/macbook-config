@@ -90,6 +90,10 @@ xcode-select --install
 ### [Docker Compose](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-docker-compose.md)
 ##### Instructions
 - There aren't any instructions for this step. If you downloaded Docker Desktop, then you already have Docker Compose.
+- You can verify installation using the following command:
+```
+docker compose version
+```
 ##### Comments
 - None.
 ***
@@ -216,12 +220,12 @@ openvpn --version
 Below this point is other additional config that I've done for my Mac that is not in the original guide.
 ***
 ### Another Redis Desktop Manager
--> Installed when building the POC (proof of concept) for FFD.
+- Installed when building the POC (proof of concept) for FFD, didn't really use it but worth keeping in mind since some SFD services will use/are using Redis.
 ##### Instructions
-- [Download from GitHub](https://github.com/qishibo/AnotherRedisDesktopManager) (includes the Homebrew command to install).
+- [Download from GitHub](https://github.com/qishibo/AnotherRedisDesktopManager) (includes the Homebrew command for installation).
 ***
 ### Microsoft Azure Storage Explorer
--> Recommended by the lead developer while going through different FFD repositories.
+- Recommended by the lead developer while going through different FFD repositories.
 ##### Instructions
 - [Download from Microsoft](https://azure.microsoft.com/en-gb/products/storage/storage-explorer)
 - Can also be installed by Homebrew: 
@@ -230,56 +234,57 @@ brew install --cask microsoft-azure-storage-explorer
 ```
 ***
 ### GraphQL Syntax Highlighting
--> Used when implementing GraphQL for a couple of POCs for FFD.
+- First used when implementing GraphQL for a couple of POCs for FFD.
 ##### Instructions
 - Install the [GraphQL: Syntax Highlighting Extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql-syntax) via VS Code
 - To implement the extension when writing out `typeDefs` (type definitions), add `#graphql` at the top of the `typeDefs` (see example below):
 ![graphql-syntax-highlighting.png](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/graphql-syntax-highlighting.png)
 ***
 ### Jenkins
--> Is needed to access CI/CD pipelines.
+- Is needed to access CI/CD pipelines.
 ##### Instructions
 - You will need to get your Jenkins credentials from CCoE.
-- In the email invite, a link will be provided to access the Jenkins dashboard (for some reason I could only open the link on the potato, it doesn't load on the browser from my offnet device).
+- In the email invite, a link will be provided to access the Jenkins dashboard.
 - Enter the username and password provided in the email and you should now be able to log into the Jenkins dashboard.
 ##### Comments
 - None.
 ***
 ### Lens
--> Kubernetes IDE used to access pods.
+- Kubernetes IDE used to access pods.
 ##### Instructions
 - [Download and install Lens](https://formulae.brew.sh/cask/lens).
-- Ensure that kubectl and Azure CLI have been installed (these are prerequisites and should have already been installed when going through [DEFRA's original dev guide](https://github.com/DEFRA/ffc-development-guide/blob/main/guides/developer-laptop-setup/README.md)).
+- Ensure that kubectl and Azure CLI have been installed (these are prerequisites and should have already been installed when going through initial Mac set-up.
 - Follow the steps in the documentation (on Confluence) for connecting Lens to Kubernetes Clusters.
+- You may also need to install [kubelogin](https://azure.github.io/kubelogin/install.html) to be able to properly connect to a cluster.
 ***
 ### env Set-up
--> Easy way to set up environment variables across multiple repos.
+- Easy way to set up environment variables across multiple repos on a Mac.
 ##### Instructions
-- Simon D (senior developer at DEFRA) taught me about this one (and he learned it from Steve H).
-- On Mac, you can set up symbolic links [symbolic links (or symlinks)](https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/). You can set up a directory for a specific team or a set of microservices where a "master" `.env` file will be created/stored
-- E.g. for the Farming Front Door (FFD) team under the Future Farming & Countryside (FFC) programme you could name the directory `ffc-ffd-env` (Simon also showed me this naming system which works really well considering all repos under the FFD team are prefixed with `ffc-ffd`) and all that this directory needs to contain is a single `.env` file where we can store all the environment variable for all `ffc-ffd` microservices).
+- Simon D (senior developer at Defra) taught me about this one (and he learned it from Steve H, former developer at Defra).
+- On Mac, you can set up [symbolic links (or symlinks)](https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/). You can set up a directory for a specific team or a set of microservices where a "master" `.env` file will be created/stored
+- E.g. for the Farming Front Door (FFD) team under the Future Farming & Countryside (FFC) programme you could name the directory `ffc-ffd-env` (Simon also showed me this naming system which works really well considering all repos under the FFD namespace are prefixed with `ffc-ffd`) and all that this directory needs to contain is a single `.env` file where we can store all the environment variables for all `ffc-ffd` microservices).
 - Once you have collated all the environment variables across the set of related repos and pasted them into the master `.env`, all that's left to do is is to create the symlink in a repo where you need to include environment variables.
 - The following command is used to achieve this:
 ```
 ln -nfsv source_file link_name
 ```
-- You would execute this command in the repo for which you want the environment variables linked with the master `.env`. As an example, here's what the command would look like if being executed from the root of the repo itself (replace `repo` with the name of the service):
+- You would execute this command in the repo for which you want the environment variables linked with the master `.env`. As an example, here's what the command would look like if being executed from the root of the repo itself:
 ```
 ln -nfsv ../ffc-sfd-env/.env .env
 ```
 - This makes it a lot easier to update `.env` files across a set of microservices because when a new environment variable comes along or a variable needs updating, you can simply copy and paste the variable(s) into any `.env` file regardless of which repo you have open - the symlink will ensure that it is updated in the master `.env` as well.
 ***
 ### yq
--> To be able to run commands from DEFRA's [ffc-azure-service-bus-scripts](https://github.com/defra/ffc-azure-service-bus-scripts)
+- To be able to run commands from Defra's [ffc-azure-service-bus-scripts](https://github.com/defra/ffc-azure-service-bus-scripts) repo.
 ##### Instructions
-- Not a requirement to be installed on offnet machine, but I did need to install this in order to run the scripts in the repo mentioned above so I could create service bus queues.
-- Installed using [Homebrew](https://github.com/mikefarah/yq?tab=readme-ov-file#macos--linux-via-homebrew):
+- Not a requirement to be installed on offnet machine, but I did need to install this in order to run the scripts in the repo mentioned above so I could provision Service Bus infrastructure.
+- Install using [Homebrew](https://github.com/mikefarah/yq?tab=readme-ov-file#macos--linux-via-homebrew):
 ```
 brew install yq
 ```
 ***
 ### NPM Save Prefix
--> Configuring save prefix to remove the `^` that is prefixed to the version number of NPM packages after installing them/when they are listed in the `package.json`.
+- Configuring save prefix to remove the `^` that is prefixed to the version number of NPM packages after installing them/when they are listed in the `package.json`.
 ##### Instructions
 - Open terminal and run the following command:
 ```
@@ -289,9 +294,9 @@ npm config set save-prefix=''
 - Just removed it because it was suggested to do.
 ***
 ### Azure Data Studio
--> Originally used this to clean up database (remove duplicated etc.) from SND3 database on ADP using PostgreSQL syntax.
+- Originally used this to clean up database (remove duplicate data/rows etc.) from the SND3 database on ADP using PostgreSQL syntax.
 ##### Instructions
 - Install [Azure Data Studio](https://azure.microsoft.com/en-gb/products/data-studio).
-- Once installed, open the application, add your account (MENTION WHICH ACCOUNT SPECIFICALLY).
+- Once installed, open the application, add your onmicrosoft account.
 - Navigate to the Extensions tab and search for PostgreSQL, install the official PostgreSQL extension.
 - Click New connection and connect to desired database.

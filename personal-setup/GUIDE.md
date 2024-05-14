@@ -1,7 +1,6 @@
 # MacBook Config Guide
 
-This document serves as a complete guide to setting up a personal MacBook device. A separate document has been created detailing the [developer set-up required by DEFRA (FCP specifically)](https://github.com/rtasalem/macbook-config/blob/main/defra-dev-config-guide.md), but it's worth noting that on a work device, some of the set-up detailed on this document may still be implemented to help create a familiar remote working environment.
-
+This document serves as a complete guide to setting up a personal MacBook device.
 ## Housekeeping
 
 1. Sign into Apple/iCloud (typically prompted via System Settings)

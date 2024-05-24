@@ -3,21 +3,22 @@
 This document details the set-up of a MacBook to use for software development within the FCP (or FFC) under Defra. The original guide detailing the set-up can be found on [Defra's official GitHub](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/index.md). Use the original guide as the main set of instructions and only refer to this guide when there's any problems. The following information is simply the documentation of my own set-up and any additional steps which helped my Mac set-up whenever I was having issues. Spoiler alert, Homebrew solved a lot of these problems ([installing Homebrew](https://brew.sh/) should probably be the first thing you do, alongside making sure you're Mac has the latest MacOS updates).
 ***
 ### Contents
-1. Developer Tools
-2. Docker Desktop
-3. Signing Commits
-4. Visual Studio Code
-5. SonarLint
-6. Docker Compose
-7. detect-secrets
-8. Node Version Manager (NVM)
-9. .NET SDK
-10. kubectl
-11. Helm
-12. Azure CLI
-13. Snyk CLI
-14. GitHub CLI
-15. OpenVPN
+1. [Developer Tools](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#developer-tools)
+2. [Docker Desktop](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#docker-desktop)
+3. [Signing Commits](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#signing-commits-aka-ensuring-your-commits-on-github-have-the-verified-tag-next-to-your-username)
+4. [Visual Studio Code](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#visual-studio-code)
+5. [SonarLint](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#sonarlint)
+6. [Docker Compose](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#docker-compose)
+7. [detect-secrets](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#detect-secrets)
+8. [Node Version Manager (NVM)](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#node-version-manager-nvm)
+9. [.NET SDK](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#net-sdk)
+10. [kubectl](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#kubectl)
+11. [Helm](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#helm)
+12. [Azure CLI](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#azure-cli)
+13. [Snyk CLI](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#snyk-cli)
+14. [GitHub CLI](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#github-cli)
+15. [OpenVPN](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#openvpn)
+16. [Other](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#other)
 ***
 ### [Developer Tools](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/setup-macos-command-line-tools.md)
 ##### Instructions

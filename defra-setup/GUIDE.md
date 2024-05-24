@@ -1,4 +1,4 @@
-# DEFRA Developer Config Guide
+# Defra Developer Config Guide
 ## Summary
 This document details the set-up of a MacBook to use for software development within the FCP (or FFC) under Defra. The original guide detailing the set-up can be found on [Defra's official GitHub](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/index.md). Use the original guide as the main set of instructions and only refer to this guide when there's any problems. The following information is simply the documentation of my own set-up and any additional steps which helped my Mac set-up whenever I was having issues. Spoiler alert, Homebrew solved a lot of these problems ([installing Homebrew](https://brew.sh/) should probably be the first thing you do, alongside making sure you're Mac has the latest MacOS updates).
 ***
@@ -11,14 +11,15 @@ This document details the set-up of a MacBook to use for software development wi
 6. [Docker Compose](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#docker-compose)
 7. [detect-secrets](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#detect-secrets)
 8. [Node Version Manager (NVM)](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#node-version-manager-nvm)
-9. [.NET SDK](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#net-sdk)
-10. [kubectl](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#kubectl)
-11. [Helm](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#helm)
-12. [Azure CLI](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#azure-cli)
-13. [Snyk CLI](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#snyk-cli)
-14. [GitHub CLI](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#github-cli)
-15. [OpenVPN](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#openvpn)
-16. [Other](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#other)
+9. [StandardJS](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#standardjs)
+10. [.NET SDK](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#net-sdk)
+11. [kubectl](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#kubectl)
+12. [Helm](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#helm)
+13. [Azure CLI](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#azure-cli)
+14. [Snyk CLI](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#snyk-cli)
+15. [GitHub CLI](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#github-cli)
+16. [OpenVPN](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#openvpn)
+17. [Other](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#other)
 ***
 ### [Developer Tools](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/setup-macos-command-line-tools.md)
 ##### Instructions
@@ -40,7 +41,7 @@ xcode-select --install
 ***
 ### [Signing Commits (a.k.a ensuring your commits on GitHub have the Verified tag next to your username)](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/sign-commits.md)
 ##### Instructions
-- Follow the instructions in the reference point (see above).
+- Follow the instructions in the guide as is.
 ##### Comments
 - Test that your commits are being signed by creating a dummy repo and pushing to that repo (or just make a commit to any draft/open PR on any repo).
 - If for whatever reason commits are not shown as `Verified` on GitHub, don't fret, the same happened to me. Here's what I did:
@@ -130,6 +131,21 @@ export NVM_DIR="$HOME/.nvm"
 - Run the command `nvm ls-remote` to list all the current versions of Node.js. Find the latest version with LTS (Long term Support) written beside it, this is the version you'll want to install.
 - Then just run the install command: `nvm install [version no.]` (e.g. `nvm install 20` as version 20 of Node.js was the latest LTS version at the time of setting up the second Mac).
 - Note that installing Node.js also installs NPM (run both `node -v` and `npm -v` to verify both were installed).
+***
+### [StandardJS](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-standard-js.md)
+##### Instructions
+- Follow the guide as is.
+##### Comments
+- If permission issues are encountered when installing the StandardJS NPM package, that is most likely because of the way Node.js & NPM were installed on the machine. The best approach for installing Node.js & NPM is to use NVM (see previous section for instructions).
+- To see a full list of globally installed NPM packages, use the following command:
+```
+npm install -g standard
+```
+- Additionally, can also verify StandardJS was installed by checking the version (although the previous command will also show the version of all globally installed packages):
+```
+standard --version
+```
+
 ***
 ### [.NET SDK](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-dotnet-sdk.md)
 ##### Instructions

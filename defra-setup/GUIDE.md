@@ -159,6 +159,10 @@ dotnet --version
 ```
 dotnet tool install --global dotnet-ef
 ```
+- You can verify the previous command successfully installed .NET tools:
+```
+dotnet-ef --version
+```
 ***
 ### [kubectl](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-kubectl.md)
 ##### Instructions

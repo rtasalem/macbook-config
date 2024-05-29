@@ -304,15 +304,14 @@ ln -nfsv ../ffc-sfd-env/.env .env
 brew install yq
 ```
 ***
-### NPM Save Prefix
+### NPM Package Version Prefix
 - Configuring save prefix to remove the `^` that is prefixed to the version number of NPM packages after installing them/when they are listed in the `package.json`.
 ##### Instructions
 - Open terminal and run the following command:
 ```
-npm config set save-prefix=''
+npm config set save-exact true
 ```
-- This will remove the caret (`^`) from the version numbers of NPM packages in the `package.json`. This can also be used to change the prefix to whatever symbol you want e.g. `~`.
-- Just removed it because it was suggested to do.
+- This will remove the caret (`^`) from the version numbers of NPM packages in the `package.json`. The caret means that it will install the latest version and the versions succeeding (from my understanding at least). This is not needed for Defra projects, hence why we use the above command to get rid of the caret.
 ***
 ### Azure Data Studio
 - Originally used this to clean up database (remove duplicate data/rows etc.) from the SND3 database on ADP using PostgreSQL syntax.

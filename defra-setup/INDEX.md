@@ -129,7 +129,7 @@ export NVM_DIR="$HOME/.nvm"
 - The reason for needing to do this is because your terminal isn't loading `nvm` automatically whenever you open a new terminal window, by having the above script in your `.zshrc` file (which you can think of as a terminal config/profile), `nvm` will now be accessible and running the above version command should now work.
 - Use NVM to install Node.js and NPM. This is highly recommended as installing Node.js and NPM this way prevents permission issues/blockers that other ways of installing often introduce (e.g. installing Node.js & NPM from the web resulted in not being able to globally install certain NPM packages).
 - Run the command `nvm ls-remote` to list all the current versions of Node.js. Find the latest version with LTS (Long term Support) written beside it, this is the version you'll want to install.
-- Then just run the install command: `nvm install [version no.]` (e.g. `nvm install 20` as version 20 of Node.js was the latest LTS version at the time of setting up the second Mac).
+- Then just run the install command: `nvm install --lts` to install the latest LTS version).
 - Note that installing Node.js also installs NPM (run both `node -v` and `npm -v` to verify both were installed).
 ***
 ### [StandardJS](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/install-standard-js.md)

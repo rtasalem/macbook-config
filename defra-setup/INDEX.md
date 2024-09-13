@@ -3,7 +3,7 @@
 This document details the set-up of a MacBook to use for software development within the FCP (or FFC) under Defra. The original guide detailing the set-up can be found on [Defra's official GitHub](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/index.md). Use the original guide as the main set of instructions and only refer to this guide when there's any problems. The following information is simply the documentation of my own set-up and any additional steps which helped my Mac set-up whenever I was having issues. Spoiler alert, Homebrew solved a lot of these problems ([installing Homebrew](https://brew.sh/) should probably be the first thing you do, alongside making sure you're Mac has the latest MacOS updates). [I created some scripts](https://github.com/rtasalem/dffc-mac-scripts) to help install *most* (not all) of the packages that are listed in the FFC local development guide to cut down on time finding install commands.
 ***
 ### Contents
-1. [Developer Tools](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#developer-tools)
+1. [Developer Tools](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/INDEX.md#developer-tools)
 2. [Docker Desktop](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#docker-desktop)
 3. [Signing Commits](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#signing-commits-aka-ensuring-your-commits-on-github-have-the-verified-tag-next-to-your-username)
 4. [Visual Studio Code](https://github.com/rtasalem/macbook-config/blob/main/defra-setup/GUIDE.md#visual-studio-code)

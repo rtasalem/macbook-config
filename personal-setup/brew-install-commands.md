@@ -102,6 +102,10 @@ brew install --cask microsoft-teams
 brew install --cask visual-studio-code
 ```
 #### W
+- Warp:
+```
+brew install --cask warp
+```
 - Whatsapp: 
 ```
 brew install --cask whatsapp

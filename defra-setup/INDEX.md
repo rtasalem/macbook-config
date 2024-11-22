@@ -391,3 +391,10 @@ npm config set save-exact true
 - Once installed, open the application, add your onmicrosoft account.
 - Navigate to the Extensions tab and search for PostgreSQL, install the official PostgreSQL extension.
 - Select `New connection` and connect to desired database.
+***
+## SSH Key
+- An SSH key is a credential that allows you to connect to GitHub ==without entering your username and personal access token each time==. An SSH key is a pair of keys that uses the Secure Shell (SSH) protocol to establish a secure connection between a local machine and a remote server.
+### Instructions
+- To generate an SSH key, follow the instructions on GitHub for [generating a new key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Stop when you reach the section about "copying contents into the config file for ssh".
+- The next step is to follow a second set of instructions for [adding your SSH key to Github](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
+- Test by cloning a repo using the SSH option and then go back to your settings to check the key is green and is highlighted as having been recently used.

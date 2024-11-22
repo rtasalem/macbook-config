@@ -20,6 +20,9 @@ This document details the set-up of a MacBook to use for software development wi
 15. [GitHub CLI](#github-cli)
 16. [OpenVPN](#openvpn)
 17. [Other](#other)
+        - [Another Redis Desktop](#another-redis-desktop-manager)
+        - [Microsoft Azure Storage Explorer](#microsoft-azure-storage-explorer)
+        - 
 ***
 ## [Developer Tools](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/setup-macos-command-line-tools.md)
 ### Instructions

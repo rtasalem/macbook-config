@@ -19,9 +19,17 @@ This document details the set-up of a MacBook to use for software development wi
 14. [Snyk CLI](#snyk-cli)
 15. [GitHub CLI](#github-cli)
 16. [OpenVPN](#openvpn)
-17. [Other](#other)
+17. [Other](#other):
     - [Another Redis Desktop](#another-redis-desktop-manager)
     - [Microsoft Azure Storage Explorer](#microsoft-azure-storage-explorer)
+    - [GraphQL Syntax Highlighting](#graphql-syntax-highlighting)
+    - [Jenkins](#jenkins)
+    - [Lens](#lens)
+    - [env Set-up](#env-set-up)
+    - [yq](#yq)
+    - [NPM Package Version Prefix](#npm-package-version-prefix)
+    - [Azure Data Studio](#azure-data-studio)
+    - [SSH Key](#ssh-key)
 ***
 ## [Developer Tools](https://github.com/DEFRA/ffc-development-guide/blob/main/docs/local-development-setup/setup-macos-command-line-tools.md)
 ### Instructions
